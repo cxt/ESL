@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.cxt.esl.R;
-import com.cxt.esl.label.model.Label;
+import com.cxt.esl.label.domain.Label;
 
 public class LabelUpdateActivity extends Activity{
 

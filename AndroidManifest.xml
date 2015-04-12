@@ -36,6 +36,19 @@
             android:name="com.cxt.esl.label.activity.LabelUpdateActivity"
             android:label="@string/label_update">
         </activity>
+        
+        <activity 
+            android:name="com.cxt.esl.pattern.activity.PatternActivity"
+            android:label="@string/pattern_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.pattern.activity.PatternAddActivity"
+            android:label="@string/pattern_add">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.pattern.activity.PatternUpdateActivity"
+            android:label="@string/pattern_update">
+        </activity>
     </application>
 
 </manifest>

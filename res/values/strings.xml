@@ -6,6 +6,11 @@
     <string name="label_add">ESL标签添加</string>
     <string name="label_update">ESL标签更新</string>
     <string name="hello_world">Hello world!</string>
+    
+     <string name="pattern_manage">ESL模板管理</string>
+     <string name="pattern_add">ESL模板添加</string>
+     <string name="pattern_update">ESL模板更新</string>
+    
     <string name="action_settings">Settings</string>
 	<string name="no_data">没有数据!</string>
 	

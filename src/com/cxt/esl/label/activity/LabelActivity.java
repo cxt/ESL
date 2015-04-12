@@ -7,7 +7,6 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.app.ExpandableListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -22,7 +21,7 @@ import android.widget.Toast;
 
 import com.cxt.esl.R;
 import com.cxt.esl.label.adapter.LabelListAdapter;
-import com.cxt.esl.label.model.Label;
+import com.cxt.esl.label.domain.Label;
 
 /*
  * 创建一个Activity，继承ExpandableListAcitivty

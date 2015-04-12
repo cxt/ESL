@@ -18,7 +18,7 @@ import com.cxt.esl.R;
 import com.cxt.esl.label.activity.LabelActivity;
 import com.cxt.esl.label.activity.LabelAddActivity;
 import com.cxt.esl.label.activity.LabelUpdateActivity;
-import com.cxt.esl.label.model.Label;
+import com.cxt.esl.label.domain.Label;
 
 public class LabelGroupLongClickListener implements OnLongClickListener {
 	private Context context;

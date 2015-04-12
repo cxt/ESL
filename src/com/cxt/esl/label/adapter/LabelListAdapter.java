@@ -11,8 +11,8 @@ import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import com.cxt.esl.R;
+import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.label.listener.LabelGroupLongClickListener;
-import com.cxt.esl.label.model.Label;
 
 
 public class LabelListAdapter extends SimpleExpandableListAdapter{

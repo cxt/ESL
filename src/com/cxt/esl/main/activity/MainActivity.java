@@ -15,6 +15,7 @@ import android.widget.SimpleExpandableListAdapter;
 
 import com.cxt.esl.R;
 import com.cxt.esl.label.activity.LabelActivity;
+import com.cxt.esl.pattern.activity.PatternActivity;
 
 /*
  * 创建一个Activity，继承ExpandableListAcitivty
@@ -171,6 +172,11 @@ public class MainActivity extends ExpandableListActivity {
 		if(groupPosition == 1){
 			if(childPosition == 0){
 				Intent intent = new Intent(MainActivity.this, LabelActivity.class);
+				startActivity(intent);
+				return true;
+			}
+			else if(childPosition == 1){
+				Intent intent = new Intent(MainActivity.this, PatternActivity.class);
 				startActivity(intent);
 				return true;
 			}
