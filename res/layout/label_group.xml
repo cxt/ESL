@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" 
+	>
+
+
+	<TextView android:id="@+id/labelGroupTo" 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:gravity="center"
+		android:paddingLeft="60px" 
+		android:paddingTop="10px"
+		android:paddingBottom="10px"
+		android:background="#C4E2F1"
+		android:textSize="20sp" 
+		android:text="@string/no_data" />
+</LinearLayout>
+ 

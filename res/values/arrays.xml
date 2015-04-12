@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="label_menu">
+        <item >查看该ESL标签</item>
+        <item >编辑该ESL标签</item>
+        <item >删除该ESL标签</item>
+    </string-array>
+    
+    
+</resources>

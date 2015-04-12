@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C4E2F1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_esl_id"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="标签编号:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_esl_id"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="标签编号"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_ap_id"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="AP选择:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_ap_id"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="AP选择"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_work_status"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="工作状态:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_work_status"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="工作状态"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+			android:id="@+id/label_search_btn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="查询"
+		/>
+
+        <Button
+			android:id="@+id/label_reset_btn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="重置"
+		/>
+    </LinearLayout>
+    
+    <Button
+			android:id="@+id/label_add_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="添加标签"
+		/>
+    
+    <ExpandableListView
+        android:id="@id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false" />
+
+    <TextView
+        android:id="@id/android:empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/no_data" />
+
+</LinearLayout>
