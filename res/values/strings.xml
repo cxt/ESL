@@ -18,6 +18,10 @@
      <string name="good_manage">ESL商品管理</string>
      <string name="good_add">ESL商品添加</string>
      <string name="good_update">ESL商品更新</string>
+     
+     <string name="kind_manage">商品类别管理</string>
+     <string name="kind_add">商品类别添加</string>
+     <string name="kind_update">商品类别更新</string>
     
     <string name="action_settings">Settings</string>
 	<string name="no_data">没有数据!</string>

@@ -4,13 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    private Long barCode;
-	private String eslName;
-	private String posName;
-	private float origPrice;
-	private float presPrice;
-	private String priceUnit;
-	private String modiTtime;
     
     <TextView
         android:id="@+id/t_bar_code"
@@ -134,7 +127,7 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="计价单位"
+        android:text="最后修改的时间"
         android:textSize="15sp" />
 
     <EditText
@@ -143,7 +136,7 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:hint="计价单位" />
+        android:hint="最后修改的时间" />
 
     
     <LinearLayout

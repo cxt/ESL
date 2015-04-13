@@ -27,7 +27,7 @@ public class GoodActivity extends ExpandableListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.model);
+		setContentView(R.layout.good);
 
 		List<Map<String, Good>> groups = new ArrayList<Map<String, Good>>();
 		List<List<Map<String, Good>>> childs = new ArrayList<List<Map<String, Good>>>();

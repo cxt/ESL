@@ -75,6 +75,20 @@
             android:name="com.cxt.esl.good.activity.GoodUpdateActivity"
             android:label="@string/good_update">
         </activity>
+        
+        <activity 
+            android:name="com.cxt.esl.kind.activity.KindActivity"
+            android:label="@string/kind_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.kind.activity.KindAddActivity"
+            android:label="@string/kind_add">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.kind.activity.KindUpdateActivity"
+            android:label="@string/kind_update">
+        </activity>
+        
     </application>
 
 </manifest>
