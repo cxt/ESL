@@ -15,6 +15,7 @@ import android.widget.SimpleExpandableListAdapter;
 
 import com.cxt.esl.R;
 import com.cxt.esl.label.activity.LabelActivity;
+import com.cxt.esl.model.activity.ModelActivity;
 import com.cxt.esl.pattern.activity.PatternActivity;
 
 /*
@@ -177,6 +178,11 @@ public class MainActivity extends ExpandableListActivity {
 			}
 			else if(childPosition == 1){
 				Intent intent = new Intent(MainActivity.this, PatternActivity.class);
+				startActivity(intent);
+				return true;
+			}
+			else if(childPosition == 2){
+				Intent intent = new Intent(MainActivity.this, ModelActivity.class);
 				startActivity(intent);
 				return true;
 			}

@@ -49,6 +49,32 @@
             android:name="com.cxt.esl.pattern.activity.PatternUpdateActivity"
             android:label="@string/pattern_update">
         </activity>
+        
+        <activity 
+            android:name="com.cxt.esl.model.activity.ModelActivity"
+            android:label="@string/model_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.model.activity.ModelAddActivity"
+            android:label="@string/model_add">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.model.activity.ModelUpdateActivity"
+            android:label="@string/model_update">
+        </activity>
+        
+        <activity 
+            android:name="com.cxt.esl.good.activity.GoodActivity"
+            android:label="@string/good_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.good.activity.GoodAddActivity"
+            android:label="@string/good_add">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.good.activity.GoodUpdateActivity"
+            android:label="@string/good_update">
+        </activity>
     </application>
 
 </manifest>

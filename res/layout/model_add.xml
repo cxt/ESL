@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t_model_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="规格型号"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_model_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="规格型号" />
+
+    <TextView
+        android:id="@+id/t_inch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="屏幕尺寸"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_inch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="屏幕尺寸" />
+    
+    <TextView
+        android:id="@+id/t_width"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="宽度"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="宽度" />
+    <TextView
+        android:id="@+id/t_height"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="高度"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="高度" />
+    
+    <TextView
+        android:id="@+id/t_rotate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="旋转角度"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_rotate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="旋转角度" />
+    <TextView
+        android:id="@+id/t_bpp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="像素"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_bpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="像素" />
+    <TextView
+        android:id="@+id/t_model_note"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="型号特征"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_model_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="型号特征" />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/model_add_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/model_addCancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消" />
+    </LinearLayout>
+    
+</LinearLayout>

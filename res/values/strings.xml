@@ -10,6 +10,14 @@
      <string name="pattern_manage">ESL模板管理</string>
      <string name="pattern_add">ESL模板添加</string>
      <string name="pattern_update">ESL模板更新</string>
+     
+     <string name="model_manage">ESL型号管理</string>
+     <string name="model_add">ESL型号添加</string>
+     <string name="model_update">ESL型号更新</string>
+     
+     <string name="good_manage">ESL商品管理</string>
+     <string name="good_add">ESL商品添加</string>
+     <string name="good_update">ESL商品更新</string>
     
     <string name="action_settings">Settings</string>
 	<string name="no_data">没有数据!</string>

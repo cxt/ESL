@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    private Long barCode;
+	private String eslName;
+	private String posName;
+	private float origPrice;
+	private float presPrice;
+	private String priceUnit;
+	private String modiTtime;
+    
+    <TextView
+        android:id="@+id/t_bar_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="商品条码"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_bar_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="商品条码" />
+    <TextView
+        android:id="@+id/t_esl_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="商品名"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_esl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="商品名" />
+    <TextView
+        android:id="@+id/t_pos_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="显示名称"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_pos_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="显示名称" />
+    <TextView
+        android:id="@+id/t_orig_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="原价"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_orig_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="原价" />
+    
+    <TextView
+        android:id="@+id/t_pres_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="现价"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/e_pres_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="现价" />
+    <TextView
+        android:id="@+id/t_price_unit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="计价单位"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/e_price_unit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="计价单位" />
+    <TextView
+        android:id="@+id/t_modi_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="计价单位"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_modi_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="计价单位" />
+
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/good_update_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/good_updateCancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消" />
+    </LinearLayout>
+    
+</LinearLayout>
