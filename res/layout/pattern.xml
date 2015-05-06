@@ -13,16 +13,12 @@
 			android:text="添加模板"
 		/>
     
-    <ExpandableListView
-        android:id="@id/android:list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:drawSelectorOnTop="false" />
+    <ListView
+        android:id="@+id/pattern_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
 
-    <TextView
-        android:id="@id/android:empty"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="@string/no_data" />
+    
 
 </LinearLayout>

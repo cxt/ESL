@@ -1,148 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/t_esl_id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="标签编号"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_esl_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="标签编号"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/t_good_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="绑定商品"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_good_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="绑定商品"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/t_pattern_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="使用的模板"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_pattern_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="使用的模板"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/t_work_status"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="工作状态"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_work_status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="工作状态"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/t_my_code"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="用户自定义编号"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_my_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="用户自定义编号"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/t_model_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="型号"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_model_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="型号"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp" />
+    android:layout_height="wrap_content" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/label_add_btn"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/t_esl_id"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="确定" />
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="标签编号"
+            android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/label_addCancel_btn"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/e_esl_id"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="取消" />
+            android:hint="标签编号"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_goods_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="绑定商品"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_goods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_pattern_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="使用的模板"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_pattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_work_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="工作状态"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_work_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_sleep_period"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="休眠时长"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_sleep_peroid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="休眠时长"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+        
+        <TextView
+            android:id="@+id/t_my_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="用户自定义编号"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_my_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户自定义编号"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/t_mac_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="物理地址"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_mac_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="物理地址"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+		
+        
+        <TextView
+            android:id="@+id/t_model_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="型号"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/label_add_sure_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="确定" />
+
+            <Button
+                android:id="@+id/label_add_cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/model_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="编号："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/model_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="规格型号："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/inch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="屏幕尺寸："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/esl_width"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="宽度："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/esl_height"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="高度："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/rotate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="翻转角度："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/bpp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="每像素所占位："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/model_note"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="型号特征："
+        android:textSize="15sp" />
+    
+
+</LinearLayout>

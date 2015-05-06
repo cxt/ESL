@@ -88,6 +88,10 @@
             android:name="com.cxt.esl.kind.activity.KindUpdateActivity"
             android:label="@string/kind_update">
         </activity>
+        <activity 
+            android:name="com.cxt.esl.bind.activity.QuickBindActivity"
+            android:label="@string/kind_update">
+        </activity>
         
     </application>
 

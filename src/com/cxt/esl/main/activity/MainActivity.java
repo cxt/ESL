@@ -1,5 +1,6 @@
 package com.cxt.esl.main.activity;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,22 +15,32 @@ import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 
 import com.cxt.esl.R;
+import com.cxt.esl.bind.activity.QuickBindActivity;
 import com.cxt.esl.good.activity.GoodActivity;
 import com.cxt.esl.kind.activity.KindActivity;
 import com.cxt.esl.label.activity.LabelActivity;
 import com.cxt.esl.model.activity.ModelActivity;
 import com.cxt.esl.pattern.activity.PatternActivity;
+import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 /*
  * 创建一个Activity，继承ExpandableListAcitivty
  */
 public class MainActivity extends ExpandableListActivity {
+	private ESLDatebaseHelper helper;
 	/** Called when the activity is first created. */
+	
+	private void init(){
+		helper = ESLDatebaseHelper.getHelper(this.getApplicationContext());
+		helper.getWritableDatabase();
+	}
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		init();
 		setContentView(R.layout.main);
-
+		
 		List<Map<String, String>> groups = new ArrayList<Map<String, String>>();
 		List<List<Map<String, String>>> childs = new ArrayList<List<Map<String, String>>>();
 
@@ -43,46 +54,16 @@ public class MainActivity extends ExpandableListActivity {
 		group3.put("group", "商品管理");
 		groups.add(group3);
 		Map<String, String> group4 = new HashMap<String, String>();
-		group4.put("group", "AP 管理");
+		group4.put("group", "监控管理");
 		groups.add(group4);
-		Map<String, String> group5 = new HashMap<String, String>();
-		group5.put("group", "监控管理");
-		groups.add(group5);
 		
 		List<Map<String, String>> child1 = new ArrayList<Map<String, String>>();
 		Map<String, String> child1Data1 = new HashMap<String, String>();
 		child1Data1.put("child", "用户定义");
 		child1.add(child1Data1);
 		Map<String, String> child1Data2 = new HashMap<String, String>();
-		child1Data2.put("child", "角色定义");
+		child1Data2.put("child", "参数配置");
 		child1.add(child1Data2);
-		Map<String, String> child1Data3 = new HashMap<String, String>();
-		child1Data3.put("child", "模块定义");
-		child1.add(child1Data3);
-		Map<String, String> child1Data4 = new HashMap<String, String>();
-		child1Data4.put("child", "功能定义");
-		child1.add(child1Data4);
-		Map<String, String> child1Data5 = new HashMap<String, String>();
-		child1Data5.put("child", "权限控制");
-		child1.add(child1Data5);
-		Map<String, String> child1Data6 = new HashMap<String, String>();
-		child1Data6.put("child", "访问控制");
-		child1.add(child1Data6);
-		Map<String, String> child1Data7 = new HashMap<String, String>();
-		child1Data7.put("child", "日志开关");
-		child1.add(child1Data7);
-		Map<String, String> child1Data8 = new HashMap<String, String>();
-		child1Data8.put("child", "手动pos同步开关");
-		child1.add(child1Data8);
-		Map<String, String> child1Data9 = new HashMap<String, String>();
-		child1Data9.put("child", "自动pos同步开关");
-		child1.add(child1Data9);
-		Map<String, String> child1Data10 = new HashMap<String, String>();
-		child1Data10.put("child", "参数配置");
-		child1.add(child1Data10);
-		Map<String, String> child1Data11 = new HashMap<String, String>();
-		child1Data11.put("child", "价格更新时间");
-		child1.add(child1Data11);
 		childs.add(child1);
 		
 		List<Map<String, String>> child2 = new ArrayList<Map<String, String>>();
@@ -109,45 +90,18 @@ public class MainActivity extends ExpandableListActivity {
 		child3Data3.put("child", "快速绑定");
 		child3.add(child3Data3);
 		Map<String, String> child3Data4 = new HashMap<String, String>();
-		child3Data4.put("child", "pos快速绑定");
+		child3Data4.put("child", "商品替换");
 		child3.add(child3Data4);
-		Map<String, String> child3Data5 = new HashMap<String, String>();
-		child3Data5.put("child", "商品替换");
-		child3.add(child3Data5);
-		Map<String, String> child3Data6 = new HashMap<String, String>();
-		child3Data6.put("child", "商品编码转换");
-		child3.add(child3Data6);
-		Map<String, String> child3Data7 = new HashMap<String, String>();
-		child3Data7.put("child", "商品导入历史");
-		child3.add(child3Data7);
 		childs.add(child3);
 		
 		List<Map<String, String>> child4 = new ArrayList<Map<String, String>>();
 		Map<String, String> child4Data1 = new HashMap<String, String>();
-		child4Data1.put("child", "AP管理");
+		child4Data1.put("child", "成功显示的标签");
 		child4.add(child4Data1);
+		Map<String, String> child4Data2 = new HashMap<String, String>();
+		child4Data2.put("child", "商品修改历史");
+		child4.add(child4Data2);
 		childs.add(child4);
-		
-		List<Map<String, String>> child5 = new ArrayList<Map<String, String>>();
-		Map<String, String> child5Data1 = new HashMap<String, String>();
-		child5Data1.put("child", "成功显示的标签");
-		child5.add(child5Data1);
-		Map<String, String> child5Data2 = new HashMap<String, String>();
-		child5Data2.put("child", "商品修改历史");
-		child5.add(child5Data2);
-		Map<String, String> child5Data3 = new HashMap<String, String>();
-		child5Data3.put("child", "设备信息监控");
-		child5.add(child5Data3);
-		Map<String, String> child5Data4 = new HashMap<String, String>();
-		child5Data4.put("child", "数据更新历史");
-		child5.add(child5Data4);
-		Map<String, String> child5Data5 = new HashMap<String, String>();
-		child5Data5.put("child", "图片生成列表");
-		child5.add(child5Data5);
-		Map<String, String> child5Data6 = new HashMap<String, String>();
-		child5Data6.put("child", "ESL休眠监控");
-		child5.add(child5Data6);
-		childs.add(child5);
 		
 
 		// 生成一个SimpleExpandableListAdapter对象
@@ -199,7 +153,19 @@ public class MainActivity extends ExpandableListActivity {
 				startActivity(intent);
 				return true;
 			}
+			else if(childPosition == 2){
+				Intent intent = new Intent(MainActivity.this, QuickBindActivity.class);
+				startActivity(intent);
+				return true;
+			}
 		}
 		return false;
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		helper.close();
+	}
+	
 }

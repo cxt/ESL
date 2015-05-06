@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content">
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <TextView
@@ -148,14 +151,14 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/model_update_btn"
+            android:id="@+id/model_update_sure_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="确定" />
 
         <Button
-            android:id="@+id/model_updateCancel_btn"
+            android:id="@+id/model_update_cancel_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -163,3 +166,4 @@
     </LinearLayout>
     
 </LinearLayout>
+</ScrollView>

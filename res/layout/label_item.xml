@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/esl_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="标签编号："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/goods_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="绑定商品："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/pattern_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="模板："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/work_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="工作状态："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/mycode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="用户自定义编号："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/model_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="型号："
+        android:textSize="15sp" />
+
+</LinearLayout>

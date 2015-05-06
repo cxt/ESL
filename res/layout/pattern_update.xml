@@ -1,127 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/t_order_num"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="排列号"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_order_num"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        android:hint="排列号" />
-
-    <TextView
-        android:id="@+id/t_pattern_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="模板名称"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_pattern_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        android:hint="模板名称" />
-    
-    <TextView
-        android:id="@+id/t_model_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="适用型号"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_model_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        android:hint="适用型号" />
-    <TextView
-        android:id="@+id/t_readme"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="readme"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_readme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        android:hint="模板说明" />
-    
-    <TextView
-        android:id="@+id/t_code"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:gravity="center"
-        android:paddingBottom="10px"
-        android:paddingLeft="60px"
-        android:paddingTop="10px"
-        android:text="html代码"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/e_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorLink="#FFFFFF"
-        android:textSize="20sp"
-        android:hint="html代码" />
-    
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:orientation="horizontal" >
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/pattern_update_btn"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/t_order_num"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="确定" />
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="排列号"
+            android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/pattern_updateCancel_btn"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/e_order_num"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="取消" />
+            android:hint="排列号"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_pattern_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="模板名称"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_pattern_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="模板名称"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_model_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="适用型号"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_readme"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="readme"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_readme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="模板说明"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/t_code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="html代码"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="html代码"
+            android:maxLines="10"
+            android:textColorLink="#FFFFFF"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4E2F1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/pattern_update_sure_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="确定" />
+
+            <Button
+                android:id="@+id/pattern_update_cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="取消" />
+        </LinearLayout>
     </LinearLayout>
-    
-</LinearLayout>
+
+</ScrollView>
