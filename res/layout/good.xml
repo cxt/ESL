@@ -41,7 +41,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/t_esl_name"
+            android:id="@+id/t_pos_name"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="3"
@@ -54,7 +54,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/e_esl_name"
+            android:id="@+id/e_pos_name"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="5"
@@ -82,12 +82,11 @@
             android:text="状态:"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/e_status"
+        <Spinner
+            android:id="@+id/spin_status"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="5"
-            android:hint="状态"
             android:textColorLink="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -99,7 +98,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/t_category"
+            android:id="@+id/t_kind"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="3"
@@ -111,12 +110,11 @@
             android:text="类别:"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/e_category"
+        <Spinner
+            android:id="@+id/spin_kind"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="5"
-            android:hint="类别"
             android:textColorLink="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -152,16 +150,11 @@
     </LinearLayout>
     
     
-    <ExpandableListView
-        android:id="@id/android:list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:drawSelectorOnTop="false" />
+    <ListView
+        android:id="@+id/good_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
 
-    <TextView
-        android:id="@id/android:empty"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="@string/no_data" />
 
 </LinearLayout>

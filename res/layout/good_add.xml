@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<LinearLayout 
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
+    
+    <TextView
+        android:id="@+id/t_img_url"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="选择图片"
+        android:textSize="15sp" />
+    
+	<EditText
+        android:id="@+id/e_img_src"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="点击选择文件" />
     
     <TextView
         android:id="@+id/t_bar_code"
@@ -25,7 +48,26 @@
         android:textSize="15sp"
         android:hint="商品条码" />
     <TextView
-        android:id="@+id/t_esl_name"
+        android:id="@+id/t_good_bar_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="显示条码"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_good_bar_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="显示条码" />
+    <TextView
+        android:id="@+id/t_pos_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#C4E2F1"
@@ -37,14 +79,14 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/e_esl_name"
+        android:id="@+id/e_pos_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
         android:hint="商品名" />
     <TextView
-        android:id="@+id/t_pos_name"
+        android:id="@+id/t_esl_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#C4E2F1"
@@ -52,16 +94,35 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="显示名称"
+        android:text="显示名"
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/e_pos_name"
+        android:id="@+id/e_esl_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:hint="显示名称" />
+        android:hint="显示名" />
+    <TextView
+        android:id="@+id/t_kind_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="类别"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spin_kind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        />
     <TextView
         android:id="@+id/t_orig_price"
         android:layout_width="fill_parent"
@@ -101,6 +162,80 @@
         android:textSize="15sp"
         android:hint="现价" />
     <TextView
+        android:id="@+id/t_stock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="库存"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/e_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="库存" />
+    <TextView
+        android:id="@+id/t_memb_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="会员价"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/e_memb_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="会员价" />
+    
+    <TextView
+        android:id="@+id/t_memb_rate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="会员折扣"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/e_memb_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="会员折扣" />
+    <TextView
+        android:id="@+id/t_model"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="规格型号"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="规格型号" />
+    <TextView
         android:id="@+id/t_price_unit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -119,7 +254,7 @@
         android:textSize="15sp"
         android:hint="计价单位" />
     <TextView
-        android:id="@+id/t_modi_time"
+        android:id="@+id/t_salable"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#C4E2F1"
@@ -127,18 +262,215 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="最后修改的时间"
+        android:text="上架数量"
         android:textSize="15sp" />
-
     <EditText
-        android:id="@+id/e_modi_time"
+        android:id="@+id/e_salable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:hint="最后修改的时间" />
+        android:hint="上架数量" />
+    
+    <TextView
+        android:id="@+id/t_saled"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="已售数量"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_saled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="已售数量" />
+    <TextView
+        android:id="@+id/t_goods_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="商品描述"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_goods_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="商品描述" />
+    <TextView
+        android:id="@+id/t_prod_area"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="产地"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_prod_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="产地" />
+    
+    <TextView
+        android:id="@+id/t_promote1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="促销信息1"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_promote1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="促销信息1" />
 
     
+    <TextView
+        android:id="@+id/t_promote2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="促销信息2"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_promote2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="促销信息2" />
+    
+    <TextView
+        android:id="@+id/t_promote_start_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="开始促销时间"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_promote_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:inputType="datetime"
+         />
+    <TextView
+        android:id="@+id/t_promote_end_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="结束促销时间"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_promote_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:inputType="datetime"
+         />
+    
+    <TextView
+        android:id="@+id/t_price_down_flag"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="优惠直降"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spin_price_down_flag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+         />
+    <TextView
+        android:id="@+id/t_memb_owner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="会员专享"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/spin_memb_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+         />
+    
+	<TextView
+        android:id="@+id/t_remarks"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="结束促销时间"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/e_remarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="15sp"
+        android:hint="备注"
+         />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -146,14 +478,14 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/good_add_btn"
+            android:id="@+id/good_add_sure_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="确定" />
 
         <Button
-            android:id="@+id/good_addCancel_btn"
+            android:id="@+id/good_add_cancel_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -161,3 +493,4 @@
     </LinearLayout>
     
 </LinearLayout>
+</ScrollView>

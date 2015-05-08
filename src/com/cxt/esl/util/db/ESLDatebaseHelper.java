@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.cxt.esl.good.domain.Good;
 import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.pattern.domain.Pattern;
@@ -27,6 +28,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 	private Dao<Label, Integer> labelDao = null;
 	private Dao<Pattern, Integer> patternDao = null;
 	private Dao<Model, Integer> modelDao = null;
+	private Dao<Good, Integer> goodDao = null;
 	private static final AtomicInteger usageCounter = new AtomicInteger(0);
 
 	// we do this so there is only one helper
@@ -60,6 +62,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.createTable(connectionSource, Label.class);
 			TableUtils.createTable(connectionSource, Pattern.class);
 			TableUtils.createTable(connectionSource, Model.class);
+			TableUtils.createTable(connectionSource, Good.class);
 			
 			labelDao = getLabelDao();
 			Label label = new Label();
@@ -100,6 +103,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.dropTable(connectionSource, Label.class, true);
 			TableUtils.dropTable(connectionSource, Pattern.class, true);
 			TableUtils.dropTable(connectionSource, Model.class, true);
+			TableUtils.dropTable(connectionSource, Good.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
@@ -129,6 +133,12 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 		}
 		return modelDao;
 	}
+	public Dao<Good, Integer> getGoodDao() throws SQLException {
+		if (goodDao == null) {
+			goodDao = getDao(Good.class);
+		}
+		return goodDao;
+	}
 
 	/**
 	 * Close the database connections and clear any cached DAOs. For each call
@@ -144,6 +154,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			labelDao = null;
 			patternDao = null;
 			modelDao = null;
+			goodDao = null;
 			helper = null;
 		}
 	}
