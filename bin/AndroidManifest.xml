@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="21" />
 
     <application
@@ -78,6 +78,14 @@
         <activity 
             android:name="com.cxt.esl.good.activity.GoodUpdateActivity"
             android:label="@string/good_update">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.good.activity.GoodReplaceActivity"
+            android:label="@string/good_replace">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.good.activity.GoodUpdateHistoryActivity"
+            android:label="@string/good_update_his">
         </activity>
         
         <activity 

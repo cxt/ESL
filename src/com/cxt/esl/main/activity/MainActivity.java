@@ -17,6 +17,9 @@ import android.widget.SimpleExpandableListAdapter;
 import com.cxt.esl.R;
 import com.cxt.esl.bind.activity.QuickBindActivity;
 import com.cxt.esl.good.activity.GoodActivity;
+import com.cxt.esl.good.activity.GoodReplaceActivity;
+import com.cxt.esl.good.activity.GoodUpdateHistoryActivity;
+import com.cxt.esl.good.domain.GoodUpdateHistory;
 import com.cxt.esl.kind.activity.KindActivity;
 import com.cxt.esl.label.activity.LabelActivity;
 import com.cxt.esl.model.activity.ModelActivity;
@@ -155,6 +158,19 @@ public class MainActivity extends ExpandableListActivity {
 			}
 			else if(childPosition == 2){
 				Intent intent = new Intent(MainActivity.this, QuickBindActivity.class);
+				startActivity(intent);
+				return true;
+			}else {
+				Intent intent = new Intent(MainActivity.this, GoodReplaceActivity.class);
+				startActivity(intent);
+				return true;
+			}
+		}
+		else if(groupPosition == 3){
+			if(childPosition == 0){
+
+			}else if(childPosition == 1){
+				Intent intent = new Intent(MainActivity.this, GoodUpdateHistoryActivity.class);
 				startActivity(intent);
 				return true;
 			}

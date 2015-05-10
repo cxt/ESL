@@ -19,6 +19,8 @@
      <string name="good_manage">ESL商品管理</string>
      <string name="good_add">ESL商品添加</string>
      <string name="good_update">ESL商品更新</string>
+     <string name="good_update_his">ESL商品更新历史</string>
+     <string name="good_replace">商品替换</string>
      
      <string name="kind_manage">商品类别管理</string>
      <string name="kind_add">商品类别添加</string>

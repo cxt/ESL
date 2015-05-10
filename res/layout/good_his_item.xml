@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#B1E2F1"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/goods_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="商品条码："
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/pos_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="商品名称："
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/esl_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="显示名称："
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/orig_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="原价："
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/pres_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="现价："
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/upd_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="修改时间："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="20px"
+        android:paddingTop="5px"
+        android:text="修改时间："
+        android:textSize="15sp" />
+
+</LinearLayout>

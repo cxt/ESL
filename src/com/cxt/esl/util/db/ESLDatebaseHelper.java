@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.good.domain.GoodUpdateHistory;
 import com.cxt.esl.kind.domain.Kind;
 import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.model.domain.Model;
@@ -30,6 +31,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 	private Dao<Pattern, Integer> patternDao = null;
 	private Dao<Model, Integer> modelDao = null;
 	private Dao<Good, Integer> goodDao = null;
+	private Dao<GoodUpdateHistory, Integer> goodUpdateHistoryDao = null;
 	private Dao<Kind, Integer> kindDao = null;
 	private static final AtomicInteger usageCounter = new AtomicInteger(0);
 
@@ -65,6 +67,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.createTable(connectionSource, Pattern.class);
 			TableUtils.createTable(connectionSource, Model.class);
 			TableUtils.createTable(connectionSource, Good.class);
+			TableUtils.createTable(connectionSource, GoodUpdateHistory.class);
 			TableUtils.createTable(connectionSource, Kind.class);
 			
 			labelDao = getLabelDao();
@@ -107,6 +110,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.dropTable(connectionSource, Pattern.class, true);
 			TableUtils.dropTable(connectionSource, Model.class, true);
 			TableUtils.dropTable(connectionSource, Good.class, true);
+			TableUtils.dropTable(connectionSource, GoodUpdateHistory.class, true);
 			TableUtils.dropTable(connectionSource, Kind.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
@@ -143,6 +147,12 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 		}
 		return goodDao;
 	}
+	public Dao<GoodUpdateHistory, Integer> getGoodUpdateHistoryDao() throws SQLException {
+		if (goodUpdateHistoryDao == null) {
+			goodUpdateHistoryDao = getDao(GoodUpdateHistory.class);
+		}
+		return goodUpdateHistoryDao;
+	}
 	public Dao<Kind, Integer> getKindDao() throws SQLException {
 		if (kindDao == null) {
 			kindDao = getDao(Kind.class);
@@ -165,6 +175,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			patternDao = null;
 			modelDao = null;
 			goodDao = null;
+			goodUpdateHistoryDao = null;
 			kindDao = null;
 			helper = null;
 		}

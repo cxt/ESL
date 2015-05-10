@@ -204,12 +204,20 @@ public class GoodAddActivity extends Activity{
 				String strStock  = etStock.getText().toString().trim();
 				String strImgSrc = etImgSrc.getText().toString().trim();
 				
-				if(strBarCode.length() == 0 || !strBarCode.matches("^[0-9]*[1-9][0-9]*$")){
+				if(strBarCode.length() == 0 || !strBarCode.matches("^[0-9]*$")){
 					Toast.makeText(GoodAddActivity.this, "商品条码填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strGoodBarCode.length() > 0 && !strGoodBarCode.matches("^\\d{1,12}$")){
+				if(strGoodBarCode.length() == 0 && !strGoodBarCode.matches("^\\d{12}$")){
 					Toast.makeText(GoodAddActivity.this, "显示条码填写有误！", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(strPosName.length() == 0){
+					Toast.makeText(GoodAddActivity.this, "商品名称填写有误！", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(strEslName.length() == 0){
+					Toast.makeText(GoodAddActivity.this, "显示名称填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				
@@ -226,19 +234,19 @@ public class GoodAddActivity extends Activity{
 					Toast.makeText(GoodAddActivity.this, "原价填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strMembRate.length() > 0 && !strMembRate.matches("^[0-9]*[1-9][0-9]*$")){
+				if(strMembRate.length() > 0 && !strMembRate.matches("^[0-9]*$")){
 					Toast.makeText(GoodAddActivity.this, "折扣填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strStock.length() > 0 && !strStock.matches("^[0-9]*[1-9][0-9]*$")){
+				if(strStock.length() > 0 && !strStock.matches("^[0-9]*$")){
 					Toast.makeText(GoodAddActivity.this, "库存填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strSalable.length() > 0 && !strSalable.matches("^[0-9]*[1-9][0-9]*$")){
+				if(strSalable.length() > 0 && !strSalable.matches("^[0-9]*$")){
 					Toast.makeText(GoodAddActivity.this, "上架数量填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strSaled.length() > 0 && !strSaled.matches("^[0-9]*[1-9][0-9]*$")){
+				if(strSaled.length() > 0 && !strSaled.matches("^[0-9]*$")){
 					Toast.makeText(GoodAddActivity.this, "已售数量填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}

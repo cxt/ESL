@@ -13,23 +13,25 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.cxt.esl.R;
 import com.cxt.esl.good.dao.GoodDao;
+import com.cxt.esl.good.dao.GoodUpdateHistoryDao;
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.good.domain.GoodUpdateHistory;
 import com.cxt.esl.kind.dao.KindDao;
 import com.cxt.esl.kind.domain.Kind;
-import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.util.CallbackBundle;
 import com.cxt.esl.util.DateTimePickerDialog;
 import com.cxt.esl.util.OpenFileDialog;
@@ -42,6 +44,7 @@ public class GoodUpdateActivity extends Activity {
 
 	private ESLDatebaseHelper helper;
 	private GoodDao goodDao;
+	private GoodUpdateHistoryDao guhDao;
 	private int membOwerPos;
 	private int priceDownFlagPos;
 	SimpleDateFormat sdf = new SimpleDateFormat(
@@ -85,7 +88,7 @@ public class GoodUpdateActivity extends Activity {
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			goodDao = new GoodDao(helper.getGoodDao());
-			
+			guhDao = new GoodUpdateHistoryDao(helper.getGoodUpdateHistoryDao());
 			kindDao = new KindDao(helper.getKindDao());
 			kindList = kindDao.queryAll();
 		} catch (SQLException e) {
@@ -243,63 +246,52 @@ public class GoodUpdateActivity extends Activity {
 				String strStock = etStock.getText().toString().trim();
 				String strImgSrc = etImgSrc.getText().toString().trim();
 
-				if (strBarCode.length() == 0
-						|| !strBarCode.matches("^[0-9]*[1-9][0-9]*$")) {
-					Toast.makeText(GoodUpdateActivity.this, "商品条码填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strBarCode.length() == 0 || !strBarCode.matches("^[0-9]*$")){
+					Toast.makeText(GoodUpdateActivity.this, "商品条码填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strGoodBarCode.length() > 0
-						&& !strGoodBarCode.matches("^\\d{1,12}$")) {
-					Toast.makeText(GoodUpdateActivity.this, "显示条码填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strGoodBarCode.length() == 0 && !strGoodBarCode.matches("^\\d{12}$")){
+					Toast.makeText(GoodUpdateActivity.this, "显示条码填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-
-				if (strOrigPrice.length() > 0
-						&& !strOrigPrice.matches("^\\d+(\\.\\d+)?$")) {
-					Toast.makeText(GoodUpdateActivity.this, "原价填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strPosName.length() == 0){
+					Toast.makeText(GoodUpdateActivity.this, "商品名称填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-
-				if (strMembPrice.length() > 0
-						&& !strMembPrice.matches("^\\d+(\\.\\d+)?$")) {
-					Toast.makeText(GoodUpdateActivity.this, "会员价填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strEslName.length() == 0){
+					Toast.makeText(GoodUpdateActivity.this, "显示名称填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strOrigPrice.length() > 0
-						&& !strOrigPrice.matches("^\\d+(\\.\\d+)?$")) {
-					Toast.makeText(GoodUpdateActivity.this, "原价填写有误！",
-							Toast.LENGTH_SHORT).show();
+				
+				if(strOrigPrice.length() > 0 && !strOrigPrice.matches("^\\d+(\\.\\d+)?$")){
+					Toast.makeText(GoodUpdateActivity.this, "原价填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strMembRate.length() > 0
-						&& !strMembRate.matches("^[0-9]*[1-9][0-9]*$")) {
-					Toast.makeText(GoodUpdateActivity.this, "折扣填写有误！",
-							Toast.LENGTH_SHORT).show();
+				
+				if(strMembPrice.length() > 0 && !strMembPrice.matches("^\\d+(\\.\\d+)?$")){
+					Toast.makeText(GoodUpdateActivity.this, "会员价填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strStock.length() > 0
-						&& !strStock.matches("^[0-9]*[1-9][0-9]*$")) {
-					Toast.makeText(GoodUpdateActivity.this, "库存填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strOrigPrice.length() > 0 && !strOrigPrice.matches("^\\d+(\\.\\d+)?$")){
+					Toast.makeText(GoodUpdateActivity.this, "原价填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strSalable.length() > 0
-						&& !strSalable.matches("^[0-9]*[1-9][0-9]*$")) {
-					Toast.makeText(GoodUpdateActivity.this, "上架数量填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strMembRate.length() > 0 && !strMembRate.matches("^[0-9]*$")){
+					Toast.makeText(GoodUpdateActivity.this, "折扣填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if (strSaled.length() > 0
-						&& !strSaled.matches("^[0-9]*[1-9][0-9]*$")) {
-					Toast.makeText(GoodUpdateActivity.this, "已售数量填写有误！",
-							Toast.LENGTH_SHORT).show();
+				if(strStock.length() > 0 && !strStock.matches("^[0-9]*$")){
+					Toast.makeText(GoodUpdateActivity.this, "库存填写有误！", Toast.LENGTH_SHORT).show();
 					return;
 				}
-
+				if(strSalable.length() > 0 && !strSalable.matches("^[0-9]*$")){
+					Toast.makeText(GoodUpdateActivity.this, "上架数量填写有误！", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(strSaled.length() > 0 && !strSaled.matches("^[0-9]*$")){
+					Toast.makeText(GoodUpdateActivity.this, "已售数量填写有误！", Toast.LENGTH_SHORT).show();
+					return;
+				}
 				float origPrice = strOrigPrice.length() > 0 ? Float
 						.valueOf(strOrigPrice) : 0.00f;
 				float presPrice = strPresPrice.length() > 0 ? Float
@@ -318,11 +310,14 @@ public class GoodUpdateActivity extends Activity {
 				int priceDownFlag = priceDownFlagPos;
 
 				Good g = new Good();
+				GoodUpdateHistory guh = new GoodUpdateHistory();
 				g.setGoodsId(good.getGoodsId());
+				guh.setGoodsId(good.getGoodsId());
 				if (strPromoteStart.length() > 0) {
 					try {
 						Date start = sdf.parse(strPromoteStart);
 						g.setPromoteStartTime(start);
+						guh.setPromoteStartTime(start);
 					} catch (ParseException e) {
 						e.printStackTrace();
 					}
@@ -331,12 +326,14 @@ public class GoodUpdateActivity extends Activity {
 					try {
 						Date end = sdf.parse(strPromoteEnd);
 						g.setPromoteEndTime(end);
+						guh.setPromoteEndTime(end);
 					} catch (ParseException e) {
 						e.printStackTrace();
 					}
 				}
 				if(kind != null){
 					g.setKindId(kind.getKindId());
+					guh.setKindId(kind.getKindId());
 				}
 				g.setBarCode(strBarCode);
 				g.setEslName(strEslName);
@@ -360,10 +357,35 @@ public class GoodUpdateActivity extends Activity {
 				g.setPriceDownFlag(priceDownFlag);
 				g.setImgUrl(strImgSrc);
 
+				guh.setBarCode(strBarCode);
+				guh.setEslName(strEslName);
+				guh.setGoodBarCode(strGoodBarCode);
+				guh.setGoodsDesc(strGoodDesc);
+				guh.setMembPrice(membPrice);
+				guh.setMembRate(membRate);
+				guh.setModel(strModel);
+				guh.setOrigPrice(origPrice);
+				guh.setPosName(strPosName);
+				guh.setPresPrice(presPrice);
+				guh.setPriceUnit(strPriceUnit);
+				guh.setProdArea(strProdArea);
+				guh.setPromote1(strPromote1);
+				guh.setPromote2(strPromote2);
+				guh.setRemarks(strRemarks);
+				guh.setSalable(salable);
+				guh.setSaled(saled);
+				guh.setStock(stock);
+				guh.setMembOwner(membOwner);
+				guh.setPriceDownFlag(priceDownFlag);
+				guh.setImgUrl(strImgSrc);
+
+				guh.setUpdTime(new Date());
+				guh.setReason("esl和商品关联操作");
 				try {
 					goodDao.update(g);
+					guhDao.insert(guh);
 				} catch (SQLException e1) {
-					e1.printStackTrace();
+					Log.e(GoodUpdateActivity.class.getSimpleName(), e1.getMessage(),e1);
 				}
 				
 				Toast.makeText(GoodUpdateActivity.this, "更新成功!",
