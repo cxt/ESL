@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
@@ -26,9 +27,13 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import com.cxt.esl.R;
 import com.cxt.esl.good.dao.GoodDao;
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.kind.dao.KindDao;
+import com.cxt.esl.kind.domain.Kind;
+import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.util.CallbackBundle;
 import com.cxt.esl.util.DateTimePickerDialog;
 import com.cxt.esl.util.OpenFileDialog;
+import com.cxt.esl.util.arrayAdapter.KindArrayAdapter;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 public class GoodUpdateActivity extends Activity {
@@ -42,6 +47,10 @@ public class GoodUpdateActivity extends Activity {
 	SimpleDateFormat sdf = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
 
+	private KindDao kindDao;
+	private List<Kind> kindList;
+	private Kind kind;
+	
 	private EditText etBarCode;
 	private EditText etGoodBarCode;
 	private EditText etPosName;
@@ -76,6 +85,9 @@ public class GoodUpdateActivity extends Activity {
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			goodDao = new GoodDao(helper.getGoodDao());
+			
+			kindDao = new KindDao(helper.getKindDao());
+			kindList = kindDao.queryAll();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -127,8 +139,24 @@ public class GoodUpdateActivity extends Activity {
 		etRemarks.setText(good.getRemarks());
 		etImgSrc.setText(good.getImgUrl());
 		
+		spinKind.setAdapter(new KindArrayAdapter(this, kindList));
+		spinKind.setOnItemSelectedListener(new OnItemSelectedListener() {
+			
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				kind = kindList.get(position);
+			}
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+			}
+			
+		});
+		
 		spinPriceDownFlag.setSelection(good.getPriceDownFlag());
 		spinMembOwner.setSelection(good.getMembOwner());
+		spinKind.setSelection(this.findPosInKindList(kindList, good.getKindId()));
 	}
 
 	@Override
@@ -302,10 +330,13 @@ public class GoodUpdateActivity extends Activity {
 				if (strPromoteEnd.length() > 0) {
 					try {
 						Date end = sdf.parse(strPromoteEnd);
-						g.setPromoteStartTime(end);
+						g.setPromoteEndTime(end);
 					} catch (ParseException e) {
 						e.printStackTrace();
 					}
+				}
+				if(kind != null){
+					g.setKindId(kind.getKindId());
 				}
 				g.setBarCode(strBarCode);
 				g.setEslName(strEslName);
@@ -336,7 +367,8 @@ public class GoodUpdateActivity extends Activity {
 				}
 				
 				Toast.makeText(GoodUpdateActivity.this, "更新成功!",
-						Toast.LENGTH_LONG).show();
+						Toast.LENGTH_SHORT).show();
+				
 				// 返回上一个Activity
 				Runtime runtime = Runtime.getRuntime();
 				try {
@@ -405,6 +437,16 @@ public class GoodUpdateActivity extends Activity {
 			return dialog;
 		}
 		return null;
+	}
+	
+	private int findPosInKindList(List<Kind> list,int id){
+		int size = 0;
+		for (Kind kind : list) {
+			if(kind.getKindId() == id)
+				return size;
+			size++;
+		}
+		return 0;
 	}
 
 }

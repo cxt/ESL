@@ -51,18 +51,14 @@ public class ModelItemClickListener implements OnItemClickListener{
 
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								// 查看
-								if (which == 0) {
-									
-								}
 								// 更新
-								else if (which == 1) {
+								if (which == 0) {
 									Intent intent = new Intent(ctx, ModelUpdateActivity.class);
 									intent.putExtra("model", model);
 									ctx.startActivity(intent);
 								}
 								// 删除
-								else if (which == 2) {
+								else if (which == 1) {
 									AlertDialog.Builder d2 = new AlertDialog.Builder(
 											ctx);
 									d2.setTitle("删除该型号");

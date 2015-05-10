@@ -25,7 +25,7 @@ public class ModelAdapter extends ArrayAdapter<Model>{
 	private static final String STR_ESL_HEIGHT = "高度:";
 	private static final String STR_RORATE = "翻转角度:";
 	private static final String STR_BPP = "每个像素所占位:";
-	private static final String STR_MODEL_NOTE = "每个像素所占位:";
+	private static final String STR_MODEL_NOTE = "型号特征:";
 	
 	public ModelAdapter(Context context, int textViewResourceId,
 			List<Model> objects) {

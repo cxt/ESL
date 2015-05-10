@@ -26,7 +26,8 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:hint="点击选择文件" />
+        android:hint="点击选择文件" 
+        android:editable="false"/>
     
     <TextView
         android:id="@+id/t_bar_code"
@@ -389,7 +390,8 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:inputType="datetime"
+        android:editable="false"
+        android:hint="点击选择日期时间"
          />
     <TextView
         android:id="@+id/t_promote_end_time"
@@ -409,7 +411,8 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:inputType="datetime"
+        android:editable="false"
+        android:hint="点击选择日期时间"
          />
     
     <TextView

@@ -66,16 +66,9 @@
 		/>
     </LinearLayout>
     
-    <ExpandableListView
-        android:id="@id/android:list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:drawSelectorOnTop="false" />
-
-    <TextView
-        android:id="@id/android:empty"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="@string/no_data" />
-
+	 <ListView
+        android:id="@+id/kind_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
 </LinearLayout>

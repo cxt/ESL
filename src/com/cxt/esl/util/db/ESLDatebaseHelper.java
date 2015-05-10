@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.kind.domain.Kind;
 import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.pattern.domain.Pattern;
@@ -29,6 +30,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 	private Dao<Pattern, Integer> patternDao = null;
 	private Dao<Model, Integer> modelDao = null;
 	private Dao<Good, Integer> goodDao = null;
+	private Dao<Kind, Integer> kindDao = null;
 	private static final AtomicInteger usageCounter = new AtomicInteger(0);
 
 	// we do this so there is only one helper
@@ -63,10 +65,11 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.createTable(connectionSource, Pattern.class);
 			TableUtils.createTable(connectionSource, Model.class);
 			TableUtils.createTable(connectionSource, Good.class);
+			TableUtils.createTable(connectionSource, Kind.class);
 			
 			labelDao = getLabelDao();
 			Label label = new Label();
-			label.setEslId(1L);
+			label.setEslId(1);
 			label.setGoodsId(13123);
 			label.setPatternId(12);
 			label.setWorkStatus(1);
@@ -74,7 +77,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			label.setModelId(234);
 			labelDao.create(label);
 			Label label2 = new Label();
-			label2.setEslId(123L);
+			label2.setEslId(123);
 			labelDao.create(label2);
 			
 			patternDao = getPatternDao();
@@ -104,6 +107,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.dropTable(connectionSource, Pattern.class, true);
 			TableUtils.dropTable(connectionSource, Model.class, true);
 			TableUtils.dropTable(connectionSource, Good.class, true);
+			TableUtils.dropTable(connectionSource, Kind.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
@@ -139,6 +143,12 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 		}
 		return goodDao;
 	}
+	public Dao<Kind, Integer> getKindDao() throws SQLException {
+		if (kindDao == null) {
+			kindDao = getDao(Kind.class);
+		}
+		return kindDao;
+	}
 
 	/**
 	 * Close the database connections and clear any cached DAOs. For each call
@@ -155,6 +165,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			patternDao = null;
 			modelDao = null;
 			goodDao = null;
+			kindDao = null;
 			helper = null;
 		}
 	}

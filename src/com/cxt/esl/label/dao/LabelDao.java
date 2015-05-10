@@ -28,7 +28,7 @@ public class LabelDao{
 		return labelDao.queryForAll();
 	}
 	
-	public List<Label> queryByEslIdOrWorkStatus(long eslId, int workStatus) throws SQLException{
+	public List<Label> queryByEslIdOrWorkStatus(int eslId, int workStatus) throws SQLException{
 		Map<String, Object> map = new HashMap<String, Object>();
 		if(eslId != -1){
 			map.put("esl_id", eslId);
@@ -52,5 +52,9 @@ public class LabelDao{
 	
 	public void update(Label label) throws SQLException{
 		labelDao.update(label);
+	}
+	
+	public Label findById(int id) throws SQLException{
+		return labelDao.queryForId(id);
 	}
 }

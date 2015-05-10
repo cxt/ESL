@@ -71,19 +71,19 @@ public class ModelAddActivity extends Activity{
 				}
 				
 				if(strWidth.length() > 0 && !strWidth.matches("^[0-9]*[1-9][0-9]*$")){
-					Toast.makeText(ModelAddActivity.this, "宽度填写有误!", Toast.LENGTH_LONG).show();
+					Toast.makeText(ModelAddActivity.this, "宽度填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}	
 				if(strHeight.length() > 0 && !strHeight.matches("^[0-9]*[1-9][0-9]*$")){
-					Toast.makeText(ModelAddActivity.this, "高度填写有误!", Toast.LENGTH_LONG).show();
+					Toast.makeText(ModelAddActivity.this, "高度填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}	
 				if(strRorate.length() > 0 && !strRorate.matches("^[0-9]*[1-9][0-9]*$")){
-					Toast.makeText(ModelAddActivity.this, "翻转角度填写有误!", Toast.LENGTH_LONG).show();
+					Toast.makeText(ModelAddActivity.this, "翻转角度填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}	
 				if(strBpp.length() > 0 && !strBpp.matches("^[0-9]*[1-9][0-9]*$")){
-					Toast.makeText(ModelAddActivity.this, "每像素所占位填写有误!", Toast.LENGTH_LONG).show();
+					Toast.makeText(ModelAddActivity.this, "每像素所占位填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}	
 				
@@ -107,7 +107,7 @@ public class ModelAddActivity extends Activity{
 					e.printStackTrace();
 				}
 				
-				Toast.makeText(ModelAddActivity.this, "添加成功!", Toast.LENGTH_LONG).show();
+				Toast.makeText(ModelAddActivity.this, "添加成功!", Toast.LENGTH_SHORT).show();
 				
 				
 				// 返回上一个Activity

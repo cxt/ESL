@@ -4,9 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    private long kindId;
-	private String kindname;
-	private String remarks;
     <TextView
         android:id="@+id/t_kind_id"
         android:layout_width="fill_parent"
@@ -16,11 +13,11 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="类别编号"
+        android:text="排列号"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/e_kind_id"
+        android:id="@+id/e_order_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
@@ -74,14 +71,14 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/kind_add_btn"
+            android:id="@+id/kind_add_sure_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="确定" />
 
         <Button
-            android:id="@+id/kind_addCancel_btn"
+            android:id="@+id/kind_add_cancel_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -50,18 +50,14 @@ public class GoodItemClickListener implements OnItemClickListener{
 
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								// 查看
+								// 查看更新
 								if (which == 0) {
-									
-								}
-								// 更新
-								else if (which == 1) {
 									Intent intent = new Intent(ctx, GoodUpdateActivity.class);
 									intent.putExtra("good", good);
 									ctx.startActivity(intent);
 								}
 								// 删除
-								else if (which == 2) {
+								else if (which == 1) {
 									AlertDialog.Builder d2 = new AlertDialog.Builder(
 											ctx);
 									d2.setTitle("删除该商品");
@@ -95,7 +91,42 @@ public class GoodItemClickListener implements OnItemClickListener{
 											});
 									d2.show();
 								}
+								else if(which == 2){
+									AlertDialog.Builder d2 = new AlertDialog.Builder(
+											ctx);
+									d2.setTitle("下架该商品");
+									d2.setMessage("确定下架该商品");
+									d2.setCancelable(false);
+									d2.setNegativeButton("否",
+											new DialogInterface.OnClickListener() {
+												@Override
+												public void onClick(
+														DialogInterface dialog,
+														int which) {
+												}
+											});
+									d2.setPositiveButton("是",
+											new DialogInterface.OnClickListener() {
+												@Override
+												public void onClick(
+														DialogInterface dialog,
+														int which) {
+													try {
+														goodDao.delete(good);
+														goodList = goodDao.queryAll();
+														adapter = new GoodAdapter(ctx,
+																R.layout.good_item, goodList);
+														ListView listView = (ListView) ((Activity) ctx).findViewById(R.id.good_list);
+														listView.setAdapter(adapter);
+													} catch (SQLException e) {
+														e.printStackTrace();
+													}
+												}
+											});
+									d2.show();
+								}
 							}
+							
 						});
 				builder.show();
 	}

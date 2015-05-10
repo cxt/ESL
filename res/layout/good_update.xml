@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
+        android:editable="false"
         android:hint="点击选择文件" />
     
     <TextView
@@ -389,7 +390,8 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:inputType="datetime"
+        android:hint="点击选择日期时间"
+        android:editable="false"
          />
     <TextView
         android:id="@+id/t_promote_end_time"
@@ -409,7 +411,8 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="15sp"
-        android:inputType="datetime"
+        android:hint="点击选择日期时间"
+        android:editable="false"
          />
     
     <TextView

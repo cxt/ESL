@@ -11,18 +11,15 @@
         <item >删除该ESL模板</item>
     </string-array>
     <string-array name="model_menu">
-        <item >查看该ESL型号</item>
         <item >编辑该ESL型号</item>
         <item >删除该ESL型号</item>
     </string-array>
     <string-array name="good_menu">
-        <item >查看该ESL商品</item>
-        <item >编辑该ESL商品</item>
+        <item >查看编辑该ESL商品</item>
         <item >删除该ESL商品</item>
         <item >下架该ESL商品</item>
     </string-array>
     <string-array name="kind_menu">
-        <item >查看该商品类别</item>
         <item >编辑该商品类别</item>
         <item >删除该商品类别</item>
     </string-array>

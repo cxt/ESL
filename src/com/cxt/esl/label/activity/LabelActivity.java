@@ -21,7 +21,7 @@ import com.cxt.esl.R;
 import com.cxt.esl.label.adapter.LabelAdapter;
 import com.cxt.esl.label.dao.LabelDao;
 import com.cxt.esl.label.domain.Label;
-import com.cxt.esl.label.listener.LabelItemLongClickListener;
+import com.cxt.esl.label.listener.LabelItemClickListener;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 public class LabelActivity extends Activity{
@@ -52,7 +52,7 @@ public class LabelActivity extends Activity{
 		Button addBtn = (Button) findViewById(R.id.label_add_btn);
 		
 		final Spinner workStaSpin = (Spinner) findViewById(R.id.esl_status_spinner);
-		String[] workStaStr = {"无","未知异常","初始","正常","生成图片","下发图片没feedback","下发图片有feedback","esl不在线"};
+		String[] workStaStr = {"工作中","停用"};
 		ArrayAdapter<String> workStaAda = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, workStaStr);
 		workStaSpin.setAdapter(workStaAda);
 		workStaSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -76,13 +76,13 @@ public class LabelActivity extends Activity{
 			public void onClick(View v) {
 				try {
 					String eslIdStr = eslIdView.getText().toString().trim();
-					long eslId = eslIdStr.matches("^\\d{1,20}$") ? Integer.valueOf(eslIdStr) : -1;
-					labelList = labelDao.queryByEslIdOrWorkStatus(eslId, workStaPos - 2);
+					int eslId = eslIdStr.matches("^\\d{1,20}$") ? Integer.valueOf(eslIdStr) : -1;
+					labelList = labelDao.queryByEslIdOrWorkStatus(eslId, workStaPos);
 					adapter = new LabelAdapter(LabelActivity.this,
 							R.layout.label_item, labelList);
 					ListView listView = (ListView) findViewById(R.id.label_list);
 					listView.setAdapter(adapter);
-					listView.setOnItemLongClickListener(new LabelItemLongClickListener(LabelActivity.this, labelList, labelDao,adapter));
+					listView.setOnItemClickListener(new LabelItemClickListener(LabelActivity.this, labelList, labelDao,adapter));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -112,7 +112,7 @@ public class LabelActivity extends Activity{
 		ListView listView = (ListView) findViewById(R.id.label_list);
 		listView.setAdapter(adapter);
 		
-		listView.setOnItemLongClickListener(new LabelItemLongClickListener(this, labelList, labelDao,adapter));
+		listView.setOnItemClickListener(new LabelItemClickListener(this, labelList, labelDao,adapter));
 	}
 	
 	@Override
@@ -127,7 +127,7 @@ public class LabelActivity extends Activity{
 				R.layout.label_item, labelList);
 		ListView listView = (ListView) findViewById(R.id.label_list);
 		listView.setAdapter(adapter);
-		listView.setOnItemLongClickListener(new LabelItemLongClickListener(this, labelList, labelDao,adapter));
+		listView.setOnItemClickListener(new LabelItemClickListener(this, labelList, labelDao,adapter));
 	}
 	
 	

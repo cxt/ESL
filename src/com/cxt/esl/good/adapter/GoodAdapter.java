@@ -52,8 +52,12 @@ public class GoodAdapter extends ArrayAdapter<Good> {
 			view = convertView;
 			viewHolder = (ViewHolder) view.getTag();
 		}
-		Bitmap bitmap = BitmapFactory.decodeFile(good.getImgUrl());
-		viewHolder.goodImg.setImageBitmap(bitmap);
+		if(good.getImgUrl().length()>0){
+			Bitmap bitmap = BitmapFactory.decodeFile(good.getImgUrl());
+			viewHolder.goodImg.setImageBitmap(bitmap);
+		}else{
+			viewHolder.goodImg.setImageResource(R.drawable.no_img);
+		}
 		viewHolder.posName.setText(STR_POS_NAME+good.getPosName());
 		viewHolder.origPrice.setText(STR_ORGI__PRICE+good.getOrigPrice());
 		viewHolder.presPrice.setText(STR_PRES__PRICE+good.getPresPrice());

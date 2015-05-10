@@ -19,7 +19,7 @@ public class Label implements Serializable{
 	 */
 	
 	@DatabaseField(columnName = "esl_id", generatedId = true, canBeNull = false)
-	private long eslId; // EID
+	private int eslId; // EID
 	@DatabaseField(columnName = "mac_id", defaultValue = "", canBeNull = false,unique=true)
 	private String macId; // MAC地址
 	@DatabaseField(columnName = "inch")
@@ -36,7 +36,7 @@ public class Label implements Serializable{
 	private int goodsId;// 关联商品id
 	@DatabaseField(columnName = "pattern_id")
 	private int patternId;// 使用模板id,
-	@DatabaseField(columnName = "ap_id")
+	@DatabaseField(columnName = "ap_id",defaultValue="")
 	private String apId;// 所属AP,
 	@DatabaseField(columnName = "user_id")
 	private int userId;// 操作人id,
@@ -60,13 +60,13 @@ public class Label implements Serializable{
 	private Date opTime;// 调入时间
 	@DatabaseField(columnName = "esl_status", defaultValue = "0", canBeNull = false)
 	private int eslStatus;// ESL工作状态，0-有效 1-暂停使用 2-失效（损坏，撤离等）,
-	@DatabaseField(columnName = "remarks")
+	@DatabaseField(columnName = "remarks",defaultValue="")
 	private String remarks;// 备注
 	@DatabaseField(columnName = "signal")
 	private int signal;// 通信信号强度
 	@DatabaseField(columnName = "model_id")
 	private int modelId;// 所属型号id
-	@DatabaseField(columnName = "mycode")
+	@DatabaseField(columnName = "mycode",defaultValue="")
 	private String mycode;// 用户自定义编号,
 	@DatabaseField(columnName = "work_status", defaultValue = "0", canBeNull = false)
 	private int workStatus;// 工作状态，-1 未知异常，0 初始，1 正常，2 生成图片，3 下发图片没feedback，4
@@ -80,7 +80,7 @@ public class Label implements Serializable{
 	@DatabaseField(columnName = "has_nofeedback_data", defaultValue = "0")
 	private int hasNofeedbackData;// 是否有未反馈的图片 0 没有 1 有
 
-	public Label(long eslId, String macId, float inch, int eslWidth,
+	public Label(int eslId, String macId, float inch, int eslWidth,
 			int eslHeight, int bpp, String kindsId, int goodsId, int patternId,
 			String apId, int userId, int sleepPeriod, int sleepMode,
 			String gateMac, String gateIp, String routMac, int deviceId,
@@ -125,11 +125,11 @@ public class Label implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getEslId() {
+	public int getEslId() {
 		return eslId;
 	}
 
-	public void setEslId(long eslId) {
+	public void setEslId(int eslId) {
 		this.eslId = eslId;
 	}
 

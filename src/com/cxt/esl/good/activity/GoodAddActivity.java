@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
@@ -23,11 +24,15 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.cxt.esl.R;
+import com.cxt.esl.bind.activity.QuickBindActivity;
 import com.cxt.esl.good.dao.GoodDao;
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.kind.dao.KindDao;
+import com.cxt.esl.kind.domain.Kind;
 import com.cxt.esl.util.CallbackBundle;
 import com.cxt.esl.util.DateTimePickerDialog;
 import com.cxt.esl.util.OpenFileDialog;
+import com.cxt.esl.util.arrayAdapter.KindArrayAdapter;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 public class GoodAddActivity extends Activity{
@@ -38,6 +43,10 @@ public class GoodAddActivity extends Activity{
 	private GoodDao goodDao;
 	private int membOwerPos;
 	private int priceDownFlagPos;
+	
+	private KindDao kindDao;
+	private List<Kind> kindList;
+	private Kind kind;
 	
 	private EditText etBarCode;
 	private EditText etGoodBarCode;
@@ -61,13 +70,39 @@ public class GoodAddActivity extends Activity{
 	private EditText etRemarks;
 	private EditText etImgSrc;
 	
+	private Spinner spinKind;
+	private Spinner spinPriceDownFlag ;
+	private Spinner spinMembOwner;
+	
 	private void init(){
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			goodDao = new GoodDao ( helper.getGoodDao());
+			
+			kindDao = new KindDao(helper.getKindDao());
+			kindList = kindDao.queryAll();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		spinKind = (Spinner) findViewById(R.id.spin_kind);
+		spinPriceDownFlag = (Spinner) findViewById(R.id.spin_price_down_flag);
+		spinMembOwner = (Spinner) findViewById(R.id.spin_memb_owner);
+		
+		spinKind.setAdapter(new KindArrayAdapter(this, kindList));
+		spinKind.setOnItemSelectedListener(new OnItemSelectedListener() {
+			
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				kind = kindList.get(position);
+			}
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+			}
+			
+		});
 	}
 	
 	@Override
@@ -104,9 +139,7 @@ public class GoodAddActivity extends Activity{
 			}
 		});
 		
-		final Spinner spinKind = (Spinner) findViewById(R.id.spin_kind);
-		final Spinner spinPriceDownFlag = (Spinner) findViewById(R.id.spin_price_down_flag);
-		final Spinner spinMembOwner = (Spinner) findViewById(R.id.spin_memb_owner);
+		
 		String[] str = {"不点亮","点亮"};
 		ArrayAdapter<String> priceDFAda = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, str);
 		spinPriceDownFlag.setAdapter(priceDFAda);
@@ -239,6 +272,9 @@ public class GoodAddActivity extends Activity{
 						e.printStackTrace();
 					}
 				}
+				if(kind != null){
+					g.setKindId(kind.getKindId());
+				}
 				g.setBarCode(strBarCode);
 				g.setEslName(strEslName);
 				g.setGoodBarCode(strGoodBarCode);
@@ -266,6 +302,7 @@ public class GoodAddActivity extends Activity{
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
+				Toast.makeText(GoodAddActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
 				// 返回上一个Activity
 				Runtime runtime = Runtime.getRuntime();
 				try {
@@ -318,7 +355,9 @@ public class GoodAddActivity extends Activity{
 			images.put(OpenFileDialog.sRoot, R.drawable.filedialog_root);	// 根目录图标
 			images.put(OpenFileDialog.sParent, R.drawable.filedialog_folder_up);	//返回上一层的图标
 			images.put(OpenFileDialog.sFolder, R.drawable.filedialog_folder);	//文件夹图标
-			images.put("wav", R.drawable.filedialog_wavfile);	//wav文件图标
+			images.put("png", R.drawable.filedialog_img);	//图片文件图标
+			images.put("jpg", R.drawable.filedialog_img);	//图片文件图标
+			images.put("jpeg", R.drawable.filedialog_img);	//图片文件图标
 			images.put(OpenFileDialog.sEmpty, R.drawable.filedialog_root);
 			Dialog dialog = OpenFileDialog.createDialog(id, this, "打开文件", new CallbackBundle() {
 				@Override
@@ -327,7 +366,7 @@ public class GoodAddActivity extends Activity{
 					etImgSrc.setText(filepath); // 把文件路径显示在标题上
 				}
 			}, 
-			"",
+			".png;.jpg;.jpeg;",
 			images);
 			return dialog;
 		}

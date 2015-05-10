@@ -53,7 +53,7 @@ public class LabelAdapter extends ArrayAdapter<Label> {
 		viewHolder.modelName.setText(STR_MODEL_NAME+label.getModelId());
 		viewHolder.mycode.setText(STR_MYCODE+label.getMycode());
 		viewHolder.patternName.setText(STR_PATTERN__NAME+label.getPatternId());
-		viewHolder.workStatus.setText(STR_WORK__STATUS+label.getWorkStatus());
+		viewHolder.workStatus.setText(STR_WORK__STATUS+(label.getWorkStatus()==0?"工作中":"停用"));
 		
 		return view;
 	}

@@ -21,6 +21,9 @@ import com.cxt.esl.good.adapter.GoodAdapter;
 import com.cxt.esl.good.dao.GoodDao;
 import com.cxt.esl.good.domain.Good;
 import com.cxt.esl.good.listener.GoodItemClickListener;
+import com.cxt.esl.kind.dao.KindDao;
+import com.cxt.esl.kind.domain.Kind;
+import com.cxt.esl.util.arrayAdapter.KindArrayAdapter;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 public class GoodActivity extends Activity{
@@ -28,7 +31,12 @@ public class GoodActivity extends Activity{
 	private List<Good> goodList;
 	private ESLDatebaseHelper helper;
 	private GoodDao goodDao;
-	private int staPos;
+	
+	private KindDao kindDao;
+	private List<Kind> kindList;
+	private Kind kind;
+	
+ 	private int staPos;
 	private GoodAdapter adapter;
 	
 	private void init(){
@@ -36,6 +44,9 @@ public class GoodActivity extends Activity{
 			helper = ESLDatebaseHelper.getHelper(this);
 			goodDao = new GoodDao ( helper.getGoodDao());
 			goodList = goodDao.queryAll();
+			
+			kindDao = new KindDao(helper.getKindDao());
+			kindList = kindDao.queryAll();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -67,6 +78,20 @@ public class GoodActivity extends Activity{
 			}
 		
 		});
+		kindSpin.setAdapter(new KindArrayAdapter(this, kindList));
+		kindSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
+			
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int position, long id) {
+				kind = kindList.get(position);
+			}
+			
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+			}
+			
+		});
 		
 		final EditText barCodeView = (EditText) findViewById(R.id.e_bar_code);
 		final EditText posNameView = (EditText) findViewById(R.id.e_pos_name);
@@ -78,7 +103,7 @@ public class GoodActivity extends Activity{
 				try {
 					String barCode = barCodeView.getText().toString().trim();
 					String posName = posNameView.getText().toString().trim();
-					goodList = goodDao.queryForBarCodeOrPosNameOrStatusOrKindId(barCode, posName, staPos-1, -1);;
+					goodList = goodDao.queryForBarCodeOrPosNameOrStatusOrKindId(barCode, posName, staPos-1, kind==null?-1:kind.getKindId());;
 					adapter = new GoodAdapter(GoodActivity.this,
 							R.layout.good_item, goodList);
 					ListView listView = (ListView) findViewById(R.id.good_list);

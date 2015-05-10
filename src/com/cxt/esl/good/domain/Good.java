@@ -23,7 +23,7 @@ public class Good implements Serializable{
 	private  String posName;// varchar(100) DEFAULT NULL COMMENT '商品名（同pos系统）',
 	@DatabaseField(columnName = "esl_name")
 	private  String eslName;// varchar(100) DEFAULT NULL COMMENT '显示名（ESL系统）',
-	@DatabaseField(columnName = "img_url")
+	@DatabaseField(columnName = "img_url",defaultValue="")
 	private String imgUrl;
 	@DatabaseField(columnName = "img_id")
 	private int imgId;

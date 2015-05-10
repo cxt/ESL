@@ -24,9 +24,10 @@
             android:id="@+id/e_esl_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="标签编号"
+            android:hint="标签编号由系统生成"
             android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:editable="false"  />
 
         <TextView
             android:id="@+id/t_goods_name"

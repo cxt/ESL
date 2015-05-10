@@ -24,6 +24,7 @@ public class PatternActivity extends Activity {
 	private ESLDatebaseHelper helper;
 	private PatternDao patternDao;
 	private PatternAdapter adapter;
+	private ListView listView;
 	
 	private void init(){
 		try {
@@ -56,7 +57,7 @@ public class PatternActivity extends Activity {
 		
 		adapter = new PatternAdapter(PatternActivity.this,
 				R.layout.pattern_item, patternList);
-		ListView listView = (ListView) findViewById(R.id.pattern_list);
+		listView = (ListView) findViewById(R.id.pattern_list);
 		listView.setAdapter(adapter);
 		
 		listView.setOnItemClickListener(new PatternItemClickListener(this, patternList, patternDao, adapter));
@@ -65,25 +66,30 @@ public class PatternActivity extends Activity {
 	@Override
 	protected void onRestart() {
 		super.onRestart();
-				try {
-					patternList = patternDao.queryAll();
-				} catch (java.sql.SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+		init();
+		setContentView(R.layout.pattern);
+		
+		Button addBtn = (Button) findViewById(R.id.pattern_add_btn);
+		
+		
+		addBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(PatternActivity.this, PatternAddActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		adapter = new PatternAdapter(PatternActivity.this,
 				R.layout.pattern_item, patternList);
-		ListView listView = (ListView) findViewById(R.id.pattern_list);
+		listView = (ListView) findViewById(R.id.pattern_list);
 		listView.setAdapter(adapter);
+		
 		listView.setOnItemClickListener(new PatternItemClickListener(this, patternList, patternDao, adapter));
 	}
 	
 	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		helper.close();
-	}
 
 	
 	

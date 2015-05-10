@@ -49,6 +49,10 @@
             android:name="com.cxt.esl.pattern.activity.PatternUpdateActivity"
             android:label="@string/pattern_update">
         </activity>
+        <activity 
+            android:name="com.cxt.esl.pattern.activity.PatternWebviewActivity"
+            android:label="@string/pattern_webview">
+        </activity>
         
         <activity 
             android:name="com.cxt.esl.model.activity.ModelActivity"
@@ -94,5 +98,5 @@
         </activity>
         
     </application>
-
+	<uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
