@@ -1,17 +1,20 @@
 package com.cxt.esl.util.db;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.cxt.esl.config.domain.Config;
 import com.cxt.esl.good.domain.Good;
 import com.cxt.esl.good.domain.GoodUpdateHistory;
 import com.cxt.esl.kind.domain.Kind;
 import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.pattern.domain.Pattern;
+import com.cxt.esl.user.domain.User;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
@@ -33,6 +36,8 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 	private Dao<Good, Integer> goodDao = null;
 	private Dao<GoodUpdateHistory, Integer> goodUpdateHistoryDao = null;
 	private Dao<Kind, Integer> kindDao = null;
+	private Dao<User, Integer> userDao = null;
+	private Dao<Config, Integer> configDao = null;
 	private static final AtomicInteger usageCounter = new AtomicInteger(0);
 
 	// we do this so there is only one helper
@@ -69,6 +74,20 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.createTable(connectionSource, Good.class);
 			TableUtils.createTable(connectionSource, GoodUpdateHistory.class);
 			TableUtils.createTable(connectionSource, Kind.class);
+			TableUtils.createTable(connectionSource, User.class);
+			TableUtils.createTable(connectionSource, Config.class);
+			
+			User u = new User();
+			u.setCreateBy(0);
+			u.setCreateDate(new Date());
+			u.setLastUpdateBy(0);
+			u.setLastUpdateDate(new Date());
+			u.setPassword("123456");
+			u.setRoleName(0);
+			u.setStatus(0);
+			u.setUserCode("admin");
+			u.setUserName("系统管理员");
+			userDao.create(u);
 			
 			labelDao = getLabelDao();
 			Label label = new Label();
@@ -112,6 +131,8 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.dropTable(connectionSource, Good.class, true);
 			TableUtils.dropTable(connectionSource, GoodUpdateHistory.class, true);
 			TableUtils.dropTable(connectionSource, Kind.class, true);
+			TableUtils.dropTable(connectionSource, User.class, true);
+			TableUtils.dropTable(connectionSource, Config.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
@@ -159,6 +180,18 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 		}
 		return kindDao;
 	}
+	public Dao<User, Integer> getUserDao() throws SQLException {
+		if (userDao == null) {
+			userDao = getDao(User.class);
+		}
+		return userDao;
+	}
+	public Dao<Config, Integer> getConfigDao() throws SQLException {
+		if (configDao == null) {
+			configDao = getDao(Config.class);
+		}
+		return configDao;
+	}
 
 	/**
 	 * Close the database connections and clear any cached DAOs. For each call
@@ -177,6 +210,8 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			goodDao = null;
 			goodUpdateHistoryDao = null;
 			kindDao = null;
+			userDao = null;
+			configDao = null;
 			helper = null;
 		}
 	}

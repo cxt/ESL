@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t_user_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="用户编号"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_user_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="用户编号" />
+
+    <TextView
+        android:id="@+id/t_user_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="用户名"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="用户名" />
+    
+    <TextView
+        android:id="@+id/t_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="用户密码"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_paasword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:hint="用户密码" />
+    <EditText
+        android:id="@+id/e_paasword_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:hint="再次输入用户密码" />
+    
+    <TextView
+        android:id="@+id/t_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="状态："
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spin_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+         />
+    <TextView
+        android:id="@+id/t_role_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="角色："
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spin_role_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+         />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/user_add_sure_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/user_add_cancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消" />
+    </LinearLayout>
+    
+</LinearLayout>

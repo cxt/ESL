@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t_ckey"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="键"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_ckey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="键" />
+
+    <TextView
+        android:id="@+id/t_cvalue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="值"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_cvalue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="值" />
+    
+    <TextView
+        android:id="@+id/t_ctype"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="类别"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spin_ctype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+          />
+    
+   
+    <TextView
+        android:id="@+id/t_note"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:gravity="center"
+        android:paddingBottom="10px"
+        android:paddingLeft="60px"
+        android:paddingTop="10px"
+        android:text="角色："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/e_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        android:hint="备注" />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/config_update_sure_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/config_update_cancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消" />
+    </LinearLayout>
+    
+</LinearLayout>

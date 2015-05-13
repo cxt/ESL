@@ -54,7 +54,6 @@ public class KindActivity extends Activity {
 			public void onClick(View v) {
 				try {
 					String kindName = kindNameView.getText().toString().trim();
-					kindDao.queryForKindName(kindName);
 					kindList = kindDao.queryForKindName(kindName);
 					adapter = new KindAdapter(KindActivity.this,
 							R.layout.kind_item, kindList);

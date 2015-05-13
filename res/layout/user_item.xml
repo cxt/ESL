@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/user_code"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="用户编号："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="用户名称："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="密码："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/role_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="角色："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="状态："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/create_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="创建日期："
+        android:textSize="15sp" />
+    
+    
+    
+
+</LinearLayout>

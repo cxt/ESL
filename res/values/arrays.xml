@@ -23,6 +23,15 @@
         <item >编辑该商品类别</item>
         <item >删除该商品类别</item>
     </string-array>
+    <string-array name="user_menu">
+        <item >编辑该用户</item>
+        <item >删除该用户</item>
+    </string-array>
+    
+    <string-array name="config_menu">
+        <item >编辑该配置</item>
+        <item >删除该配置</item>
+    </string-array>
     
     
     

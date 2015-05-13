@@ -1,6 +1,5 @@
 package com.cxt.esl.main.activity;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,14 +15,15 @@ import android.widget.SimpleExpandableListAdapter;
 
 import com.cxt.esl.R;
 import com.cxt.esl.bind.activity.QuickBindActivity;
+import com.cxt.esl.config.activity.ConfigActivity;
 import com.cxt.esl.good.activity.GoodActivity;
 import com.cxt.esl.good.activity.GoodReplaceActivity;
 import com.cxt.esl.good.activity.GoodUpdateHistoryActivity;
-import com.cxt.esl.good.domain.GoodUpdateHistory;
 import com.cxt.esl.kind.activity.KindActivity;
 import com.cxt.esl.label.activity.LabelActivity;
 import com.cxt.esl.model.activity.ModelActivity;
 import com.cxt.esl.pattern.activity.PatternActivity;
+import com.cxt.esl.user.activity.UserActivity;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
 /*
@@ -57,8 +57,11 @@ public class MainActivity extends ExpandableListActivity {
 		group3.put("group", "商品管理");
 		groups.add(group3);
 		Map<String, String> group4 = new HashMap<String, String>();
-		group4.put("group", "监控管理");
+		group4.put("group", "销售管理");
 		groups.add(group4);
+		Map<String, String> group5 = new HashMap<String, String>();
+		group5.put("group", "监控管理");
+		groups.add(group5);
 		
 		List<Map<String, String>> child1 = new ArrayList<Map<String, String>>();
 		Map<String, String> child1Data1 = new HashMap<String, String>();
@@ -99,12 +102,21 @@ public class MainActivity extends ExpandableListActivity {
 		
 		List<Map<String, String>> child4 = new ArrayList<Map<String, String>>();
 		Map<String, String> child4Data1 = new HashMap<String, String>();
-		child4Data1.put("child", "成功显示的标签");
+		child4Data1.put("child", "商品销售");
 		child4.add(child4Data1);
 		Map<String, String> child4Data2 = new HashMap<String, String>();
-		child4Data2.put("child", "商品修改历史");
+		child4Data2.put("child", "订单管理");
 		child4.add(child4Data2);
 		childs.add(child4);
+		
+		List<Map<String, String>> child5 = new ArrayList<Map<String, String>>();
+		Map<String, String> child5Data1 = new HashMap<String, String>();
+		child5Data1.put("child", "成功显示的标签");
+		child5.add(child5Data1);
+		Map<String, String> child5Data2 = new HashMap<String, String>();
+		child5Data2.put("child", "商品修改历史");
+		child5.add(child5Data2);
+		childs.add(child5);
 		
 
 		// 生成一个SimpleExpandableListAdapter对象
@@ -123,12 +135,25 @@ public class MainActivity extends ExpandableListActivity {
 				new String[] { "child" }, new int[] { R.id.mianChildTo });
 		// 将SimpleExpandableListAdapter对象设置给当前的ExpandableListActivity
 		setListAdapter(sela);
+		this.getExpandableListView().expandGroup(2);
 	}
 
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v,
 			int groupPosition, int childPosition, long id) {
 		Log.d("Test", groupPosition + " " + childPosition + " " + id);
+		if(groupPosition == 0){
+			if(childPosition == 0){
+				Intent intent = new Intent(MainActivity.this, UserActivity.class);
+				startActivity(intent);
+				return true;
+			}
+			else if(childPosition == 1){
+				Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
+				startActivity(intent);
+				return true;
+			}
+		}
 		if(groupPosition == 1){
 			if(childPosition == 0){
 				Intent intent = new Intent(MainActivity.this, LabelActivity.class);
@@ -167,6 +192,9 @@ public class MainActivity extends ExpandableListActivity {
 			}
 		}
 		else if(groupPosition == 3){
+			
+		}
+		else if(groupPosition == 4){
 			if(childPosition == 0){
 
 			}else if(childPosition == 1){
