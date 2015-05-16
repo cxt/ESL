@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C4E2F1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_bar_code"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="商品条码:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_bar_code"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="商品条码"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_pos_name"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="商品名称:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/e_pos_name"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="商品名称"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+    
+	
+	
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/t_kind"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="类别:"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spin_kind"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <Button
+			android:id="@+id/good_search_btn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="查询"
+		/>
+
+        <Button
+			android:id="@+id/good_reset_btn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="重置"
+		/>
+    <Button
+			android:id="@+id/shopping_cart_btn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:text="查看购物车商品"
+		/>
+    </LinearLayout>
+    
+    
+    <ListView
+        android:id="@+id/good_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+
+</LinearLayout>

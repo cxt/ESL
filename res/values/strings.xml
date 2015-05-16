@@ -34,6 +34,10 @@
      <string name="config_add">配置添加</string>
      <string name="config_update">配置更新</string>
     
+     <string name="sale_manage">销售管理</string>
+     <string name="shopping_cart">购物车</string>
+     <string name="order_manage">订单管理</string>
+     
     <string name="action_settings">Settings</string>
 	<string name="no_data">没有数据!</string>
 	

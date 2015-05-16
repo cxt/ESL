@@ -18,6 +18,8 @@ import com.cxt.esl.good.activity.GoodUpdateActivity;
 import com.cxt.esl.good.adapter.GoodAdapter;
 import com.cxt.esl.good.dao.GoodDao;
 import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.sale.activity.SaleActivity;
+import com.cxt.esl.sale.adapter.SaleAdapter;
 
 public class GoodItemClickListener implements OnItemClickListener{
 	private Context ctx;
@@ -34,6 +36,15 @@ public class GoodItemClickListener implements OnItemClickListener{
 		this.goodList = goodList;
 		this.goodDao = goodDao;
 		this.adapter = adapter;
+	}
+
+
+
+	public GoodItemClickListener(SaleActivity ctx2, List<Good> goodList2,
+			GoodDao goodDao2, SaleAdapter adapter2) {
+		this.ctx = ctx2;
+		this.goodList = goodList2;
+		this.goodDao = goodDao2;
 	}
 
 

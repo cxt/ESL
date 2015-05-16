@@ -14,6 +14,7 @@ import com.cxt.esl.kind.domain.Kind;
 import com.cxt.esl.label.domain.Label;
 import com.cxt.esl.model.domain.Model;
 import com.cxt.esl.pattern.domain.Pattern;
+import com.cxt.esl.sale.domain.Order;
 import com.cxt.esl.user.domain.User;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -38,6 +39,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 	private Dao<Kind, Integer> kindDao = null;
 	private Dao<User, Integer> userDao = null;
 	private Dao<Config, Integer> configDao = null;
+	private Dao<Order, Integer> orderDao = null;
 	private static final AtomicInteger usageCounter = new AtomicInteger(0);
 
 	// we do this so there is only one helper
@@ -76,6 +78,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.createTable(connectionSource, Kind.class);
 			TableUtils.createTable(connectionSource, User.class);
 			TableUtils.createTable(connectionSource, Config.class);
+			TableUtils.createTable(connectionSource, Order.class);
 			
 			User u = new User();
 			u.setCreateBy(0);
@@ -133,6 +136,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			TableUtils.dropTable(connectionSource, Kind.class, true);
 			TableUtils.dropTable(connectionSource, User.class, true);
 			TableUtils.dropTable(connectionSource, Config.class, true);
+			TableUtils.dropTable(connectionSource, Order.class, true);
 			// after we drop the old databases, we create the new ones
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
@@ -192,6 +196,12 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 		}
 		return configDao;
 	}
+	public Dao<Order, Integer> getOrderDao() throws SQLException {
+		if (orderDao == null) {
+			orderDao = getDao(Order.class);
+		}
+		return orderDao;
+	}
 
 	/**
 	 * Close the database connections and clear any cached DAOs. For each call
@@ -212,6 +222,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			kindDao = null;
 			userDao = null;
 			configDao = null;
+			orderDao = null;
 			helper = null;
 		}
 	}

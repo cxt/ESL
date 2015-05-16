@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/operator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="操作者："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/all_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="总价："
+        android:textSize="15sp" />
+    
+    <TextView
+        android:id="@+id/user_pay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="用户支付："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="找回零钱："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/create_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="订单创建时间："
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/goods"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B1E2F1"
+        android:paddingBottom="5px"
+        android:paddingLeft="50px"
+        android:paddingTop="5px"
+        android:text="购买了："
+        android:textSize="15sp" />
+
+</LinearLayout>

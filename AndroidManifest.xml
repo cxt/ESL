@@ -134,6 +134,19 @@
             android:label="@string/config_update">
         </activity>
         
+        <activity 
+            android:name="com.cxt.esl.sale.activity.SaleActivity"
+            android:label="@string/sale_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.sale.activity.ShoppingCartActivity"
+            android:label="@string/shopping_cart">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.sale.activity.OrderActivity"
+            android:label="@string/order_manage">
+        </activity>
+        
     </application>
 	<uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

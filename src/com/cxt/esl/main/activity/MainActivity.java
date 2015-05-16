@@ -23,6 +23,8 @@ import com.cxt.esl.kind.activity.KindActivity;
 import com.cxt.esl.label.activity.LabelActivity;
 import com.cxt.esl.model.activity.ModelActivity;
 import com.cxt.esl.pattern.activity.PatternActivity;
+import com.cxt.esl.sale.activity.OrderActivity;
+import com.cxt.esl.sale.activity.SaleActivity;
 import com.cxt.esl.user.activity.UserActivity;
 import com.cxt.esl.util.db.ESLDatebaseHelper;
 
@@ -192,7 +194,16 @@ public class MainActivity extends ExpandableListActivity {
 			}
 		}
 		else if(groupPosition == 3){
-			
+			if(childPosition == 0){
+				Intent intent = new Intent(MainActivity.this, SaleActivity.class);
+				startActivity(intent);
+				return true;
+			}
+			else if(childPosition == 1){
+				Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+				startActivity(intent);
+				return true;
+			}
 		}
 		else if(groupPosition == 4){
 			if(childPosition == 0){
