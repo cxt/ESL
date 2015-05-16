@@ -1096,6 +1096,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f02005e;
         public static final int icon=0x7f02005f;
         public static final int no_img=0x7f020060;
+        public static final int pic=0x7f020061;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;

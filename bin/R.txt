@@ -251,6 +251,7 @@ int drawable ic_action_search 0x7f02005d
 int drawable ic_launcher 0x7f02005e
 int drawable icon 0x7f02005f
 int drawable no_img 0x7f020060
+int drawable pic 0x7f020061
 int id action_bar 0x7f05001c
 int id action_bar_activity_content 0x7f050015
 int id action_bar_container 0x7f05001b
