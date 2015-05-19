@@ -11,6 +11,7 @@
 		android:paddingLeft="60px" 
 		android:paddingTop="10px"
 		android:paddingBottom="10px"
+		android:gravity="center"
 		android:background="#C4E2F1" 
 		android:textSize="26sp" 
 		android:text="@string/no_data" />

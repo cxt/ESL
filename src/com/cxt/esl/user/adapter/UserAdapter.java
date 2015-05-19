@@ -15,12 +15,12 @@ import com.cxt.esl.user.domain.User;
 public class UserAdapter extends ArrayAdapter<User> {
 
 	private int resourceId;
-	private static final String STR_USER_CODE = "用户编号:";
-	private static final String STR_USER_NAME = "用户名称:";
-	private static final String STR_PASSWORD = "用户密码:*****************";
-	private static final String STR_STATUS = "状态:";
-	private static final String STR_ROLE_NAME = "角色:";
-	private static final String STR_CREATE_DATE = "创建时间:";
+	private static final String STR_USER_CODE = "用户编号: ";
+	private static final String STR_USER_NAME = "用户名称: ";
+	private static final String STR_PASSWORD = "用户密码: *****************";
+	private static final String STR_STATUS = "状态: ";
+	private static final String STR_ROLE_NAME = "角色: ";
+	private static final String STR_CREATE_DATE = "创建时间: ";
 
 	public UserAdapter(Context context, int textViewResourceId,
 			List<User> objects) {

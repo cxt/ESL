@@ -21,7 +21,7 @@ public class PatternWebviewActivity extends Activity{
 		String strHtml = "<html><head><meta http-equiv='content-type' content='text/html; charset=UTF-8'></head><body>"
 				+ pattern.getCode() + "</body></html>";
 		WebView webView = (WebView)findViewById(R.id.webview_pattern);
-		webView.loadData(strHtml, "text/html", "utf-8");
+		webView.loadDataWithBaseURL("", strHtml, "text/html", "UTF-8", null);
 	}
 
 }

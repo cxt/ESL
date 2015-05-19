@@ -16,10 +16,10 @@ public class KindAdapter extends ArrayAdapter<Kind>{
 
 	
 	private int resourceId;
-	private static final String STR_KIND_ID = "类别编号:";
-	private static final String STR_ORDER_NUM= "排列号:";
-	private static final String STR_KIND_NAME = "商品类别:";
-	private static final String STR_REMARKS = "备注:";
+	private static final String STR_KIND_ID = "类别编号: ";
+	private static final String STR_ORDER_NUM= "排列号: ";
+	private static final String STR_KIND_NAME = "商品类别: ";
+	private static final String STR_REMARKS = "备注: ";
 	
 	public KindAdapter(Context context, int textViewResourceId,
 			List<Kind> objects) {

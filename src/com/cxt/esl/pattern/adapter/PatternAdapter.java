@@ -17,11 +17,11 @@ public class PatternAdapter extends ArrayAdapter<Pattern>{
 
 	
 	private int resourceId;
-	private static final String STR_PATTERN_ID = "编号:";
-	private static final String STR_ORDER__NUM = "排列号:";
-	private static final String STR_PATTERN__NAME = "模板名称:";
-	private static final String STR_MODEL = "适用型号:";
-	private static final String STR_README = "README:";
+	private static final String STR_PATTERN_ID = "编号: ";
+	private static final String STR_ORDER__NUM = "排列号: ";
+	private static final String STR_PATTERN__NAME = "模板名称: ";
+	private static final String STR_MODEL = "适用型号: ";
+	private static final String STR_README = "README: ";
 	
 	public PatternAdapter(Context context, int textViewResourceId,
 			List<Pattern> objects) {

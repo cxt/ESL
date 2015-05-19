@@ -54,7 +54,7 @@ public class LabelAddActivity extends Activity{
 	private void init(){
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
-			labelDao = new LabelDao ( helper.getLabelDao());
+			labelDao = new LabelDao(helper.getLabelDao(), helper.getPatternDao(), helper.getModelDao(), helper.getGoodDao());
 			goodDao = new GoodDao ( helper.getGoodDao());
 			patternDao = new PatternDao(helper.getPatternDao());
 			modelDao = new ModelDao(helper.getModelDao());
@@ -83,17 +83,14 @@ public class LabelAddActivity extends Activity{
 		
 		spinGoods.setAdapter(new GoodArrayAdapter(this, goodList));
 		spinGoods.setOnItemSelectedListener(new OnItemSelectedListener() {
-
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
 					good = goodList.get(position);
 			}
-
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
-		
 		});
 		spinPattern.setAdapter(new PatternArrayAdapter(this, patternList));
 		spinPattern.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -155,7 +152,7 @@ public class LabelAddActivity extends Activity{
 					Toast.makeText(LabelAddActivity.this, "睡眠时长填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				if(strMacId.length()>0 && !strMacId.matches("^([0-9a-fA-F]{2})(([0-9a-fA-F]{2}){5})$")){
+				if(strMacId.length()>0 && !strMacId.matches("^([0-9a-fA-F]{2})(([/\\s:-][0-9a-fA-F]{2}){5})$")){
 					Toast.makeText(LabelAddActivity.this, "物理地址填写有误!", Toast.LENGTH_SHORT).show();
 					return;
 				}
@@ -171,7 +168,7 @@ public class LabelAddActivity extends Activity{
 				if(pattern != null)
 					label.setPatternId(pattern.getPatternId());
 				if(model != null)
-					label.setModelId(pattern.getModelId());
+					label.setModelId(model.getModelId());
 				label.setWorkStatus(workStaPos);
 				
 				try {

@@ -52,7 +52,7 @@ public class QuickBindActivity extends Activity{
 	private void init(){
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
-			labelDao = new LabelDao(helper.getLabelDao());
+			labelDao = new LabelDao(helper.getLabelDao(), helper.getPatternDao(), helper.getModelDao(), helper.getGoodDao());
 			labelList = labelDao.queryByEslIdOrWorkStatus(-1, 0);
 			
 			goodDao = new GoodDao ( helper.getGoodDao());

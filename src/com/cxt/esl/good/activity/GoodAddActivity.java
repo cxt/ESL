@@ -343,39 +343,40 @@ public class GoodAddActivity extends Activity{
 		helper.close();
 	}
 
-	private final class DateTimeOnClick implements OnClickListener{
+	private final class DateTimeOnClick implements OnClickListener {
 		EditText datetime;
-		DateTimeOnClick(EditText datetime){
+
+		DateTimeOnClick(EditText datetime) {
 			this.datetime = datetime;
 		}
-				@Override
-		        public void onClick(View v) {
-		            DateTimePickerDialog dateTimePicKDialog = new DateTimePickerDialog(
-		                    GoodAddActivity.this);
-		            dateTimePicKDialog.dateTimePicKDialog(datetime, 0);
-		        }
+
+		@Override
+		public void onClick(View v) {
+			DateTimePickerDialog dateTimePicKDialog = new DateTimePickerDialog(
+					GoodAddActivity.this);
+			dateTimePicKDialog.dateTimePicKDialog(datetime, 0);
+		}
 	}
 	@Override
 	protected Dialog onCreateDialog(int id) {
-		if(id==openfileDialogId){
+		if (id == openfileDialogId) {
 			Map<String, Integer> images = new HashMap<String, Integer>();
 			// 下面几句设置各文件类型的图标， 需要你先把图标添加到资源文件夹
-			images.put(OpenFileDialog.sRoot, R.drawable.filedialog_root);	// 根目录图标
-			images.put(OpenFileDialog.sParent, R.drawable.filedialog_folder_up);	//返回上一层的图标
-			images.put(OpenFileDialog.sFolder, R.drawable.filedialog_folder);	//文件夹图标
-			images.put("png", R.drawable.filedialog_img);	//图片文件图标
-			images.put("jpg", R.drawable.filedialog_img);	//图片文件图标
-			images.put("jpeg", R.drawable.filedialog_img);	//图片文件图标
+			images.put(OpenFileDialog.sRoot, R.drawable.filedialog_root); // 根目录图标
+			images.put(OpenFileDialog.sParent, R.drawable.filedialog_folder_up); // 返回上一层的图标
+			images.put(OpenFileDialog.sFolder, R.drawable.filedialog_folder); // 文件夹图标
+			images.put("png", R.drawable.filedialog_img); // 图片文件图标
+			images.put("jpg", R.drawable.filedialog_img); // 图片文件图标
+			images.put("jpeg", R.drawable.filedialog_img); // 图片文件图标
 			images.put(OpenFileDialog.sEmpty, R.drawable.filedialog_root);
-			Dialog dialog = OpenFileDialog.createDialog(id, this, "打开文件", new CallbackBundle() {
-				@Override
-				public void callback(Bundle bundle) {
-					String filepath = bundle.getString("path");
-					etImgSrc.setText(filepath); // 把文件路径显示在标题上
-				}
-			}, 
-			".png;.jpg;.jpeg;",
-			images);
+			Dialog dialog = OpenFileDialog.createDialog(id, this, "打开文件",
+					new CallbackBundle() {
+						@Override
+						public void callback(Bundle bundle) {
+							String filepath = bundle.getString("path");
+							etImgSrc.setText(filepath); // 把文件路径显示在标题上
+						}
+					}, ".png;.jpg;.jpeg;", images);
 			return dialog;
 		}
 		return null;

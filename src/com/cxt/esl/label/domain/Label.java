@@ -3,6 +3,9 @@ package com.cxt.esl.label.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.cxt.esl.good.domain.Good;
+import com.cxt.esl.model.domain.Model;
+import com.cxt.esl.pattern.domain.Pattern;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -79,6 +82,33 @@ public class Label implements Serializable{
 	private int hasNosendData;// 是否有未下发的图片 0 没有 1 有
 	@DatabaseField(columnName = "has_nofeedback_data", defaultValue = "0")
 	private int hasNofeedbackData;// 是否有未反馈的图片 0 没有 1 有
+
+	private Good good;
+	private Pattern pattern;
+	private Model model;
+	public Good getGood() {
+		return good;
+	}
+
+	public void setGood(Good good) {
+		this.good = good;
+	}
+
+	public Pattern getPattern() {
+		return pattern;
+	}
+
+	public void setPattern(Pattern pattern) {
+		this.pattern = pattern;
+	}
+
+	public Model getModel() {
+		return model;
+	}
+
+	public void setModel(Model model) {
+		this.model = model;
+	}
 
 	public Label(int eslId, String macId, float inch, int eslWidth,
 			int eslHeight, int bpp, String kindsId, int goodsId, int patternId,

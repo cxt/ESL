@@ -16,14 +16,14 @@ import com.cxt.esl.good.domain.GoodUpdateHistory;
 public class GoodUpdateHistoryAdapter extends ArrayAdapter<GoodUpdateHistory> {
 
 	private int resourceId;
-	private static final String STR_GOOD_ID = "商品条码:";
-	private static final String STR_POS_NAME = "商品名称:";
-	private static final String STR_ESL_NAME = "显示名称:";
-	private static final String STR_ORGI__PRICE = "原价:";
-	private static final String STR_PRES__PRICE = "现价:";
-	private static final String STR_UPD__TIME = "修改:";
-	private static final String STR_STATUS = "图片生成状态:";
-	private static final String STR_REASON = "修改原因:";
+	private static final String STR_GOOD_ID = "商品条码: ";
+	private static final String STR_POS_NAME = "商品名称: ";
+	private static final String STR_ESL_NAME = "显示名称: ";
+	private static final String STR_ORGI__PRICE = "原价: ";
+	private static final String STR_PRES__PRICE = "现价: ";
+	private static final String STR_UPD__TIME = "修改: ";
+	private static final String STR_STATUS = "图片生成状态: ";
+	private static final String STR_REASON = "修改原因: ";
 	
 	public GoodUpdateHistoryAdapter(Context context, int textViewResourceId,
 			List<GoodUpdateHistory> objects) {

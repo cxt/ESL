@@ -15,12 +15,12 @@ import com.cxt.esl.sale.domain.Order;
 public class OrderAdapter extends ArrayAdapter<Order> {
 
 	private int resourceId;
-	private static final String STR_OPERATOR = "操作者:";
-	private static final String STR_ALL_PRICE = "总价:";
-	private static final String STR_USER_PAY = "用户支付:";
-	private static final String STR_CHANGE = "找回零钱:";
-	private static final String STR_CREATE_DATE = "订单创建时间:";
-	private static final String STR_GOODS = "购买了:";
+	private static final String STR_OPERATOR = "操作者: ";
+	private static final String STR_ALL_PRICE = "总价: ";
+	private static final String STR_USER_PAY = "用户支付: ";
+	private static final String STR_CHANGE = "找回零钱: ";
+	private static final String STR_CREATE_DATE = "订单创建时间: ";
+	private static final String STR_GOODS = "购买了: ";
 	
 	public OrderAdapter(Context context, int textViewResourceId,
 			List<Order> objects) {

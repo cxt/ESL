@@ -19,10 +19,10 @@ import com.cxt.esl.sale.domain.SaleItem;
 public class SaleAdapter extends ArrayAdapter<SaleItem> {
 
 	private int resourceId;
-	private static final String STR_POS_NAME = "商品名称:";
-	private static final String STR_ORGI__PRICE = "原价:";
-	private static final String STR_PRES__PRICE = "现价:";
-	private static final String STR_COUNT = "购买数量:";
+	private static final String STR_POS_NAME = "商品名称: ";
+	private static final String STR_ORGI__PRICE = "原价: ";
+	private static final String STR_PRES__PRICE = "现价: ";
+	private static final String STR_COUNT = "购买数量: ";
 	
 	public SaleAdapter(Context context, int textViewResourceId,
 			List<SaleItem> objects) {

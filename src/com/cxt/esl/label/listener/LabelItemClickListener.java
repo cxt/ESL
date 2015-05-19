@@ -64,7 +64,7 @@ public class LabelItemClickListener implements OnItemClickListener{
 									items[7] = "电池电量：" + label.getPower();
 									items[8] = "物理地址：" + label.getMacId();
 									items[9] = "型号：" + label.getPatternId();
-									items[10] = "最后通信时间：" + label.getLastCommTime()==null?"":"";
+									items[10] = "最后通信时间：" + (label.getLastCommTime()==null?"":"");
 									items[11] = "备注：" + label.getRemarks();
 									d1.setItems(items, null);
 									d1.show();

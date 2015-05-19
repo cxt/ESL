@@ -114,7 +114,7 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="像素"
+        android:text="每像素所占位"
         android:textSize="20sp" />
 
     <EditText

@@ -63,7 +63,7 @@ public class LabelUpdateActivity extends Activity {
 		label = (Label) intent.getSerializableExtra("label");
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
-			labelDao = new LabelDao ( helper.getLabelDao());
+			labelDao = new LabelDao(helper.getLabelDao(), helper.getPatternDao(), helper.getModelDao(), helper.getGoodDao());
 			goodDao = new GoodDao ( helper.getGoodDao());
 			patternDao = new PatternDao(helper.getPatternDao());
 			modelDao = new ModelDao(helper.getModelDao());
@@ -186,7 +186,7 @@ public class LabelUpdateActivity extends Activity {
 					return;
 				}
 				if (strMacId.length()>0 && !strMacId
-						.matches("^([0-9a-fA-F]{2})(([0-9a-fA-F]{2}){5})$")) {
+						.matches("^([0-9a-fA-F]{2})(([/\\s:-][0-9a-fA-F]{2}){5})$")) {
 					Toast.makeText(LabelUpdateActivity.this, "物理地址填写有误!",
 							Toast.LENGTH_SHORT).show();
 					return;
@@ -205,7 +205,7 @@ public class LabelUpdateActivity extends Activity {
 				if(pattern != null)
 					label.setPatternId(pattern.getPatternId());
 				if(model != null)
-					label.setModelId(pattern.getModelId());
+					label.setModelId(model.getModelId());
 				label.setWorkStatus(workStaPos);
 				
 				try {

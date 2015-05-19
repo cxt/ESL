@@ -18,9 +18,9 @@ import com.cxt.esl.good.domain.Good;
 public class GoodAdapter extends ArrayAdapter<Good> {
 
 	private int resourceId;
-	private static final String STR_POS_NAME = "商品名称:";
-	private static final String STR_ORGI__PRICE = "原价:";
-	private static final String STR_PRES__PRICE = "现价:";
+	private static final String STR_POS_NAME = "商品名称: ";
+	private static final String STR_ORGI__PRICE = "原价: ";
+	private static final String STR_PRES__PRICE = "现价: ";
 	
 	public GoodAdapter(Context context, int textViewResourceId,
 			List<Good> objects) {

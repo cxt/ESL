@@ -35,7 +35,7 @@ public class LabelActivity extends Activity{
 	private void init(){
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
-			labelDao = new LabelDao ( helper.getLabelDao());
+			labelDao =  new LabelDao(helper.getLabelDao(), helper.getPatternDao(), helper.getModelDao(), helper.getGoodDao());
 			labelList = labelDao.queryAll();
 		} catch (SQLException e) {
 			e.printStackTrace();
