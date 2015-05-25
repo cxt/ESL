@@ -13,7 +13,7 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="用户编号"
+        android:text="用户帐号"
         android:textSize="20sp" />
 
     <EditText
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:textColorLink="#FFFFFF"
         android:textSize="20sp"
-        android:hint="用户编号" />
+        android:hint="用户帐号" />
 
     <TextView
         android:id="@+id/t_user_name"

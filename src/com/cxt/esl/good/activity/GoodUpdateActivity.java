@@ -378,7 +378,7 @@ public class GoodUpdateActivity extends Activity {
 				guh.setMembOwner(membOwner);
 				guh.setPriceDownFlag(priceDownFlag);
 				guh.setImgUrl(strImgSrc);
-
+				guh.setStatus(1);
 				guh.setUpdTime(new Date());
 				guh.setReason("esl和商品关联操作");
 				try {

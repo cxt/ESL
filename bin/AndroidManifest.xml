@@ -11,7 +11,7 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/pic"
-        android:logo="@drawable/icon"
+        android:logo="@drawable/pic"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -30,6 +30,10 @@
         </activity>
         <activity 
             android:name="com.cxt.esl.label.activity.LabelActivity"
+            android:label="@string/label_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.label.activity.LabelMainActivity"
             android:label="@string/label_manage">
         </activity>
         <activity 
@@ -76,6 +80,10 @@
             android:label="@string/good_manage">
         </activity>
         <activity 
+            android:name="com.cxt.esl.good.activity.GoodMainActivity"
+            android:label="@string/good_manage">
+        </activity>
+        <activity 
             android:name="com.cxt.esl.good.activity.GoodAddActivity"
             android:label="@string/good_add">
         </activity>
@@ -94,6 +102,10 @@
         
         <activity 
             android:name="com.cxt.esl.kind.activity.KindActivity"
+            android:label="@string/kind_manage">
+        </activity>
+        <activity 
+            android:name="com.cxt.esl.kind.activity.KindMainActivity"
             android:label="@string/kind_manage">
         </activity>
         <activity 
@@ -126,6 +138,10 @@
             android:label="@string/config_manage">
         </activity>
         <activity 
+            android:name="com.cxt.esl.config.activity.ConfigMainActivity"
+            android:label="@string/config_manage">
+        </activity>
+        <activity 
             android:name="com.cxt.esl.config.activity.ConfigAddActivity"
             android:label="@string/config_add">
         </activity>
@@ -136,6 +152,7 @@
         
         <activity 
             android:name="com.cxt.esl.sale.activity.SaleActivity"
+            android:windowSoftInputMode="stateHidden" 
             android:label="@string/sale_manage">
         </activity>
         <activity 

@@ -12,7 +12,7 @@
         android:paddingBottom="5px"
         android:paddingLeft="50px"
         android:paddingTop="5px"
-        android:text="用户编号："
+        android:text="用户帐号："
         android:textSize="15sp" />
     <TextView
         android:id="@+id/user_name"

@@ -74,7 +74,7 @@
         android:paddingBottom="10px"
         android:paddingLeft="60px"
         android:paddingTop="10px"
-        android:text="角色："
+        android:text="备注："
         android:textSize="20sp" />
 
     <EditText

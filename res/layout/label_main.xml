@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C4E2F1"
+    android:orientation="vertical" >
+
+
+        <Button
+            android:id="@+id/label_search_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查询标签" />
+
+    <ListView
+        android:id="@+id/label_list"
+        android:divider="#000000" 
+        android:dividerHeight="4px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+    <TextView
+        android:id="@id/android:empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/no_data" />
+
+</LinearLayout>

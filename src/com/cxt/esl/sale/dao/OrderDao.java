@@ -1,10 +1,13 @@
 package com.cxt.esl.sale.dao;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.cxt.esl.sale.domain.Order;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.Where;
 
 public class OrderDao {
 	public OrderDao(Dao<Order, Integer> dao) {
@@ -24,6 +27,9 @@ public class OrderDao {
 	
 	public List<Order> queryAll() throws SQLException{
 		return dao.queryForAll();
+	}
+	public List<Order> queryByGoodName(String posName) throws SQLException{
+		return dao.queryBuilder().where().like("goods", "*"+posName+"*").query();
 	}
 	
 	public void delete(Order order) throws SQLException{

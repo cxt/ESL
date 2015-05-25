@@ -1,5 +1,6 @@
 package com.cxt.esl.kind.activity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -30,7 +31,7 @@ public class KindActivity extends Activity {
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			kindDao = new KindDao ( helper.getKindDao());
-			kindList = kindDao.queryAll();
+			kindList = new ArrayList<Kind>();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (java.sql.SQLException e) {

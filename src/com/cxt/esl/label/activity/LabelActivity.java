@@ -2,6 +2,7 @@ package com.cxt.esl.label.activity;
 
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -36,7 +37,7 @@ public class LabelActivity extends Activity{
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			labelDao =  new LabelDao(helper.getLabelDao(), helper.getPatternDao(), helper.getModelDao(), helper.getGoodDao());
-			labelList = labelDao.queryAll();
+			labelList = new ArrayList<Label>();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

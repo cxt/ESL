@@ -8,19 +8,23 @@ import java.util.Map;
 import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
+import android.widget.Toast;
 
 import com.cxt.esl.R;
 import com.cxt.esl.bind.activity.QuickBindActivity;
-import com.cxt.esl.config.activity.ConfigActivity;
-import com.cxt.esl.good.activity.GoodActivity;
+import com.cxt.esl.config.activity.ConfigMainActivity;
+import com.cxt.esl.good.activity.GoodMainActivity;
 import com.cxt.esl.good.activity.GoodReplaceActivity;
 import com.cxt.esl.good.activity.GoodUpdateHistoryActivity;
-import com.cxt.esl.kind.activity.KindActivity;
-import com.cxt.esl.label.activity.LabelActivity;
+import com.cxt.esl.kind.activity.KindMainActivity;
+import com.cxt.esl.label.activity.LabelMainActivity;
 import com.cxt.esl.model.activity.ModelActivity;
 import com.cxt.esl.pattern.activity.PatternActivity;
 import com.cxt.esl.sale.activity.OrderActivity;
@@ -33,6 +37,7 @@ import com.cxt.esl.util.db.ESLDatebaseHelper;
  */
 public class MainActivity extends ExpandableListActivity {
 	private ESLDatebaseHelper helper;
+	protected boolean isQuit;
 	/** Called when the activity is first created. */
 	
 	private void init(){
@@ -112,9 +117,6 @@ public class MainActivity extends ExpandableListActivity {
 		childs.add(child4);
 		
 		List<Map<String, String>> child5 = new ArrayList<Map<String, String>>();
-		Map<String, String> child5Data1 = new HashMap<String, String>();
-		child5Data1.put("child", "成功显示的标签");
-		child5.add(child5Data1);
 		Map<String, String> child5Data2 = new HashMap<String, String>();
 		child5Data2.put("child", "商品修改历史");
 		child5.add(child5Data2);
@@ -151,14 +153,14 @@ public class MainActivity extends ExpandableListActivity {
 				return true;
 			}
 			else if(childPosition == 1){
-				Intent intent = new Intent(MainActivity.this, ConfigActivity.class);
+				Intent intent = new Intent(MainActivity.this, ConfigMainActivity.class);
 				startActivity(intent);
 				return true;
 			}
 		}
 		if(groupPosition == 1){
 			if(childPosition == 0){
-				Intent intent = new Intent(MainActivity.this, LabelActivity.class);
+				Intent intent = new Intent(MainActivity.this, LabelMainActivity.class);
 				startActivity(intent);
 				return true;
 			}
@@ -175,11 +177,11 @@ public class MainActivity extends ExpandableListActivity {
 		}
 		else if(groupPosition == 2){
 			if(childPosition == 0){
-				Intent intent = new Intent(MainActivity.this, GoodActivity.class);
+				Intent intent = new Intent(MainActivity.this, GoodMainActivity.class);
 				startActivity(intent);
 				return true;
 			}else if(childPosition == 1){
-				Intent intent = new Intent(MainActivity.this, KindActivity.class);
+				Intent intent = new Intent(MainActivity.this, KindMainActivity.class);
 				startActivity(intent);
 				return true;
 			}
@@ -206,9 +208,7 @@ public class MainActivity extends ExpandableListActivity {
 			}
 		}
 		else if(groupPosition == 4){
-			if(childPosition == 0){
-
-			}else if(childPosition == 1){
+			 if(childPosition == 0){
 				Intent intent = new Intent(MainActivity.this, GoodUpdateHistoryActivity.class);
 				startActivity(intent);
 				return true;
@@ -223,4 +223,29 @@ public class MainActivity extends ExpandableListActivity {
 		helper.close();
 	}
 	
+	Handler mHandler = new Handler() {  
+        @Override  
+        public void handleMessage(Message msg) {  
+            super.handleMessage(msg);  
+            isQuit = false;  
+        }  
+    };  
+  
+    @Override  
+    public boolean onKeyDown(int keyCode, KeyEvent event) {  
+        if (keyCode == KeyEvent.KEYCODE_BACK) {  
+            if (!isQuit) {  
+                isQuit = true;  
+                Toast.makeText(getApplicationContext(), "再按一次返回登陆界面",  
+                        Toast.LENGTH_SHORT).show();  
+                // 利用handler延迟发送更改状态信息   
+                mHandler.sendEmptyMessageDelayed(0, 2000);  
+            } else {  
+                finish();  
+                System.exit(0);  
+            }  
+        }  
+        return false;  
+    }  
+
 }

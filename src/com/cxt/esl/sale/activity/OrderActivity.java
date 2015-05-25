@@ -7,9 +7,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.cxt.esl.R;
@@ -23,6 +27,10 @@ public class OrderActivity extends Activity{
 	private OrderDao orderDao;
 	private List<Order> orderList;
 	private OrderAdapter adapter;
+	private EditText etPosName;
+	private Button btnSearch;
+	private Button btnReset;
+	private String posName;
 	
 	private void init(){
 		try {
@@ -32,6 +40,33 @@ public class OrderActivity extends Activity{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		etPosName = (EditText) findViewById(R.id.e_pos_name);
+		btnSearch = (Button) findViewById(R.id.good_search_btn);
+		btnReset = (Button) findViewById(R.id.good_reset_btn);
+		btnReset.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				etPosName.setText("");
+			}
+		});
+		btnSearch.setOnClickListener(new OnClickListener() {
+			
+
+			@Override
+			public void onClick(View v) {
+				posName = etPosName.getText().toString().trim();
+				try {
+					orderList = orderDao.queryByGoodName(posName);
+				} catch (SQLException e) {
+					Log.e(OrderActivity.class.getSimpleName(), e.getMessage(), e);
+				}
+				adapter = new OrderAdapter(OrderActivity.this,
+						R.layout.order_item, orderList);
+				ListView listView = (ListView) findViewById(R.id.order_list);
+				listView.setAdapter(adapter);
+			}
+		});
 	}
 	
 	@Override

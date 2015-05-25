@@ -170,7 +170,7 @@ public class SaleActivity extends Activity{
 			AlertDialog.Builder d = new AlertDialog.Builder(
 					SaleActivity.this);
 			d.setTitle("添加该商品到购物车");
-			d.setMessage("输入购买数量:");
+			d.setMessage("商品名为："+g.getPosName()+"\n商品现价为："+g.getPresPrice()+"元，\n请输入购买数量:");
 			d.setCancelable(false);
 			d.setNegativeButton("否",
 					new DialogInterface.OnClickListener() {

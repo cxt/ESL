@@ -1,6 +1,7 @@
 package com.cxt.esl.good.activity;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -43,7 +44,7 @@ public class GoodActivity extends Activity{
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			goodDao = new GoodDao ( helper.getGoodDao());
-			goodList = goodDao.queryAll();
+			goodList = new ArrayList<Good>();
 			
 			kindDao = new KindDao(helper.getKindDao());
 			kindList = kindDao.queryAll();

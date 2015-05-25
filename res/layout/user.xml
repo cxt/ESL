@@ -21,7 +21,7 @@
             android:paddingBottom="10px"
             android:paddingLeft="60px"
             android:paddingTop="10px"
-            android:text="用户编码:"
+            android:text="用户帐号:"
             android:textSize="20sp" />
 
         <EditText
@@ -29,7 +29,7 @@
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="5"
-            android:hint="用户编码"
+            android:hint="用户账号"
             android:textColorLink="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -96,6 +96,8 @@
     
 	 <ListView
         android:id="@+id/user_list"
+         android:divider="#000000" 
+        android:dividerHeight="4px"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>

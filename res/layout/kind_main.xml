@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C4E2F1"
+    android:orientation="vertical" >
+
+    <Button
+			android:id="@+id/kind_search_btn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="查询类别"
+		/>
+    
+	 <ListView
+        android:id="@+id/kind_list"
+         android:divider="#000000" 
+        android:dividerHeight="4px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+</LinearLayout>

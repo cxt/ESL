@@ -6,10 +6,19 @@
     android:orientation="vertical" >
 
 
-        <TextView
+        
+
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+       <TextView
             android:id="@+id/t_goods_price"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="3"
             android:background="#C4E2F1"
             android:gravity="center"
             android:paddingBottom="10px"
@@ -18,7 +27,16 @@
             android:text="商品总价:"
             android:textSize="20sp" />
 
-
+        <EditText
+            android:id="@+id/e_goods_price"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:hint="商品总价"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+    
 	<LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -50,33 +68,7 @@
     
 	
 	
-	<LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/t_change"
-            android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="3"
-            android:background="#C4E2F1"
-            android:gravity="center"
-            android:paddingBottom="10px"
-            android:paddingLeft="60px"
-            android:paddingTop="10px"
-            android:text="找回零钱:"
-            android:textSize="20sp" />
-	<EditText
-            android:id="@+id/e_change"
-            android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="5"
-            android:hint="找回给用户的零钱"
-            android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
-    </LinearLayout>
+	
 	
 <Button 
     android:id="@+id/check_out_btn"
@@ -86,6 +78,8 @@
     
     <ListView
         android:id="@+id/sale_list"
+         android:divider="#000000" 
+        android:dividerHeight="4px"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>

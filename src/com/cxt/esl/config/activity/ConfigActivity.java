@@ -1,5 +1,6 @@
 package com.cxt.esl.config.activity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -36,7 +37,7 @@ public class ConfigActivity extends Activity {
 		try {
 			helper = ESLDatebaseHelper.getHelper(this);
 			configDao = new ConfigDao ( helper.getConfigDao());
-			configList = configDao.queryAll();
+			configList = new ArrayList<Config>();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (java.sql.SQLException e) {

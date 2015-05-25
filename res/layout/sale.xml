@@ -12,6 +12,33 @@
         android:orientation="horizontal" >
 
         <TextView
+            android:id="@+id/t_kind"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+            android:background="#C4E2F1"
+            android:gravity="center"
+            android:paddingBottom="10px"
+            android:paddingLeft="60px"
+            android:paddingTop="10px"
+            android:text="类        别:"
+            android:textSize="15sp" />
+
+        <Spinner
+            android:id="@+id/spin_kind"
+            android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="5"
+            android:textColorLink="#FFFFFF"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#C4E2F1"
+        android:orientation="horizontal" >
+
+        <TextView
             android:id="@+id/t_bar_code"
             android:layout_width="0dp"
 			android:layout_height="wrap_content"
@@ -22,7 +49,7 @@
             android:paddingLeft="60px"
             android:paddingTop="10px"
             android:text="商品条码:"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/e_bar_code"
@@ -31,7 +58,7 @@
 			android:layout_weight="5"
             android:hint="商品条码"
             android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
 	<LinearLayout
@@ -51,7 +78,7 @@
             android:paddingLeft="60px"
             android:paddingTop="10px"
             android:text="商品名称:"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/e_pos_name"
@@ -60,38 +87,12 @@
 			android:layout_weight="5"
             android:hint="商品名称"
             android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
     
 	
 	
-	<LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#C4E2F1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/t_kind"
-            android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="3"
-            android:background="#C4E2F1"
-            android:gravity="center"
-            android:paddingBottom="10px"
-            android:paddingLeft="60px"
-            android:paddingTop="10px"
-            android:text="类别:"
-            android:textSize="20sp" />
-
-        <Spinner
-            android:id="@+id/spin_kind"
-            android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="5"
-            android:textColorLink="#FFFFFF"
-            android:textSize="20sp" />
-    </LinearLayout>
+	
 	
     <LinearLayout
         android:layout_width="fill_parent"
@@ -104,6 +105,7 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:textSize="15sp"
 			android:text="查询"
 		/>
 
@@ -112,6 +114,7 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:textSize="15sp"
 			android:text="重置"
 		/>
     <Button
@@ -119,13 +122,16 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:text="查看购物车商品"
+			android:textSize="15sp"
+			android:text="购物车"
 		/>
     </LinearLayout>
     
     
     <ListView
         android:id="@+id/good_list"
+         android:divider="#000000" 
+        android:dividerHeight="4px"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>

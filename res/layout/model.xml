@@ -23,6 +23,8 @@
 
     <ListView
         android:id="@+id/model_list"
+         android:divider="#000000" 
+        android:dividerHeight="4px"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>
