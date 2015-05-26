@@ -139,7 +139,9 @@ public class MainActivity extends ExpandableListActivity {
 				new String[] { "child" }, new int[] { R.id.mianChildTo });
 		// 将SimpleExpandableListAdapter对象设置给当前的ExpandableListActivity
 		setListAdapter(sela);
+		this.getExpandableListView().expandGroup(1);
 		this.getExpandableListView().expandGroup(2);
+		this.getExpandableListView().expandGroup(3);
 	}
 
 	@Override

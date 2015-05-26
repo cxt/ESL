@@ -92,27 +92,7 @@ public class ESLDatebaseHelper extends OrmLiteSqliteOpenHelper{
 			u.setUserName("系统管理员");
 			userDao.create(u);
 			
-			labelDao = getLabelDao();
-			Label label = new Label();
-			label.setEslId(1);
-			label.setGoodsId(13123);
-			label.setPatternId(12);
-			label.setWorkStatus(1);
-			label.setMacId("123123");
-			label.setModelId(234);
-			labelDao.create(label);
-			Label label2 = new Label();
-			label2.setEslId(123);
-			labelDao.create(label2);
 			
-			patternDao = getPatternDao();
-			Pattern p1  = new Pattern(); 
-			p1.setCode("test");
-			p1.setOrderNum(1);
-			p1.setPatternName("2.1寸白板");
-			p1.setModel("ble2.1w");
-			p1.setReadme("ble2.1w");
-			patternDao.create(p1);
 			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

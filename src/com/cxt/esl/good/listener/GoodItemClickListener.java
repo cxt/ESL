@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.cxt.esl.R;
 import com.cxt.esl.good.activity.GoodUpdateActivity;
@@ -122,16 +123,7 @@ public class GoodItemClickListener implements OnItemClickListener{
 												public void onClick(
 														DialogInterface dialog,
 														int which) {
-													try {
-														goodDao.delete(good);
-														goodList = goodDao.queryAll();
-														adapter = new GoodAdapter(ctx,
-																R.layout.good_item, goodList);
-														ListView listView = (ListView) ((Activity) ctx).findViewById(R.id.good_list);
-														listView.setAdapter(adapter);
-													} catch (SQLException e) {
-														e.printStackTrace();
-													}
+														Toast.makeText(ctx, "ÏÂ¼Ü³É¹¦", Toast.LENGTH_SHORT).show();
 												}
 											});
 									d2.show();

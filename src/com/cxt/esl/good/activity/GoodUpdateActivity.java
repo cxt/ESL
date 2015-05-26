@@ -446,7 +446,9 @@ public class GoodUpdateActivity extends Activity {
 			images.put(OpenFileDialog.sRoot, R.drawable.filedialog_root); // 根目录图标
 			images.put(OpenFileDialog.sParent, R.drawable.filedialog_folder_up); // 返回上一层的图标
 			images.put(OpenFileDialog.sFolder, R.drawable.filedialog_folder); // 文件夹图标
-			images.put("wav", R.drawable.filedialog_wavfile); // wav文件图标
+			images.put("png", R.drawable.filedialog_img); // 图片文件图标
+			images.put("jpg", R.drawable.filedialog_img); // 图片文件图标
+			images.put("jpeg", R.drawable.filedialog_img); // 图片文件图标
 			images.put(OpenFileDialog.sEmpty, R.drawable.filedialog_root);
 			Dialog dialog = OpenFileDialog.createDialog(id, this, "打开文件",
 					new CallbackBundle() {
@@ -455,7 +457,7 @@ public class GoodUpdateActivity extends Activity {
 							String filepath = bundle.getString("path");
 							etImgSrc.setText(filepath); // 把文件路径显示在标题上
 						}
-					}, "", images);
+					}, ".png;.jpg;.jpeg;", images);
 			return dialog;
 		}
 		return null;
